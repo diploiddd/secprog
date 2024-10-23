@@ -42,8 +42,8 @@
           <!-- <a href="profile.html" class="btn">View Profile</a> -->
 
           <div class="flex-btn">
-            <a href="login.html" class="option-btn">Login</a>
-            <a href="regis.html" class="option-btn">Register</a>
+            <a href="login.php" class="option-btn">Login</a>
+            <a href="regis.php" class="option-btn">Register</a>
           </div>
         </div>
       </section>
