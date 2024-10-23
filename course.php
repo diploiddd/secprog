@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teacher's Profile</title>
+    <title>Courses</title>
 
     <link
       rel="stylesheet"
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="header">
+  <header class="header">
       <section class="flex">
-        <a href="/home.html" class="logo">CyberCourse</a>
+        <a href="/home.php" class="logo">CyberCourse</a>
         <form action="" method="post" class="search-form">
           <input
             type="text"
@@ -39,11 +39,11 @@
           <img src="img/profile.jpeg" alt="" />
           <h3>Panda</h3>
           <span>Student</span>
-          <a href="profile.html" class="btn">View Profile</a>
+          <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="login.html" class="option-btn">Login</a>
-            <a href="regis.html" class="option-btn">Register</a>
+            <a href="login.php" class="option-btn">Login</a>
+            <a href="regis.php" class="option-btn">Register</a>
           </div>
         </div>
       </section>
@@ -58,68 +58,98 @@
         <img src="img/profile.jpeg" alt="" />
         <h3>Panda</h3>
         <span>Student</span>
-        <a href="profile.html" class="btn">View Profile</a>
+        <a href="profile.php" class="btn">View Profile</a>
       </div>
 
       <nav class="navbar">
-        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="about.html"
+        <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="about.php"
           ><i class="fas fa-question"></i><span>About Us</span></a
         >
-        <a href="course.html"
+        <a href="course.php"
           ><i class="fas fa-graduation-cap"></i><span>Courses</span></a
         >
-        <a href="teachers.html"
+        <a href="teachers.php"
           ><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a
         >
-        <a href="contact.html"
+        <a href="contact.php"
           ><i class="fas fa-headset"></i><span>Contact Us</span></a
         >
       </nav>
     </div>
 
-    <section class="tprofile">
-      <h1 class="heading">Profile Details</h1>
-      <div class="detail">
-        <div class="teacher">
-          <img src="img/t1.jpeg" alt="" />
-          <h3>Kocheng</h3>
-          <span>Developer</span>
-        </div>
-        <div class="flex">
-          <p>Total Playlists: <span>4</span></p>
-          <p>Total Videos: <span>8</span></p>
-          <p>Total Likes: <span>12</span></p>
-          <p>Total Comments: <span>16</span></p>
-        </div>
-      </div>
-    </section>
-
     <section class="course">
       <h1 class="heading">Our Courses</h1>
       <div class="box-container">
         <div class="box">
+          <div class="tutor">
+            <img src="img/t1.jpeg" alt="" />
+            <div>
+              <h3>Kocheng</h3>
+              <span>21-25-2022</span>
+            </div>
+          </div>
           <img src="img/tn1.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Cyber Law Course</h3>
           <a href="playlist.html" class="inline-btn">View Playlists</a>
         </div>
 
         <div class="box">
+          <div class="tutor">
+            <img src="img/t2.jpeg" alt="" />
+            <div>
+              <h3>Gigi</h3>
+              <span>21-25-2022</span>
+            </div>
+          </div>
           <img src="img/tn2.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Network Penetration Testing Course</h3>
           <a href="playlist.html" class="inline-btn">View Playlists</a>
         </div>
 
         <div class="box">
+          <div class="tutor">
+            <img src="img/t33.jpeg" alt="" />
+            <div>
+              <h3>Mooo</h3>
+              <span>21-25-2022</span>
+            </div>
+          </div>
           <img src="img/tn3.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Computer Security Fundamental Course</h3>
+          <a href="playlist.html" class="inline-btn">View Playlists</a>
+        </div>
+
+        <div class="box">
+          <div class="tutor">
+            <img src="img/t4.jpeg" alt="" />
+            <div>
+              <h3>Koala</h3>
+              <span>21-25-2022</span>
+            </div>
+          </div>
+          <img src="img/tn4.jpeg" class="thumb" alt="" />
+          <h3 class="title">Complete Mobile Penetration Testing Course</h3>
+          <a href="playlist.html" class="inline-btn">View Playlists</a>
+        </div>
+
+        <div class="box">
+          <div class="tutor">
+            <img src="img/t5.jpeg" alt="" />
+            <div>
+              <h3>Birdie</h3>
+              <span>21-25-2022</span>
+            </div>
+          </div>
+          <img src="img/tn5.jpeg" class="thumb" alt="" />
+          <h3 class="title">Complete Computer Forensic Course</h3>
           <a href="playlist.html" class="inline-btn">View Playlists</a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>Kelompok HCI</span> | All Rights Reserved
+      &copy; copyright @ 2024 by <span>Lorem Ipsum</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

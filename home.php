@@ -14,7 +14,7 @@
   <body>
     <header class="header">
       <section class="flex">
-        <a href="/home.html" class="logo">CyberCourse</a>
+        <a href="/home.php" class="logo">CyberCourse</a>
         <form action="" method="post" class="search-form">
           <input
             type="text"
@@ -39,11 +39,11 @@
           <img src="img/profile.jpeg" alt="" />
           <h3>Panda</h3>
           <span>Student</span>
-          <a href="profile.html" class="btn">View Profile</a>
+          <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="login.html" class="option-btn">Login</a>
-            <a href="regis.html" class="option-btn">Register</a>
+            <a href="login.php" class="option-btn">Login</a>
+            <a href="regis.php" class="option-btn">Register</a>
           </div>
         </div>
       </section>
@@ -58,21 +58,21 @@
         <img src="img/profile.jpeg" alt="" />
         <h3>Panda</h3>
         <span>Student</span>
-        <a href="profile.html" class="btn">View Profile</a>
+        <a href="profile.php" class="btn">View Profile</a>
       </div>
 
       <nav class="navbar">
-        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="about.html"
+        <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="about.php"
           ><i class="fas fa-question"></i><span>About Us</span></a
         >
-        <a href="course.html"
+        <a href="course.php"
           ><i class="fas fa-graduation-cap"></i><span>Courses</span></a
         >
-        <a href="teachers.html"
+        <a href="teachers.php"
           ><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a
         >
-        <a href="contact.html"
+        <a href="contact.php"
           ><i class="fas fa-headset"></i><span>Contact Us</span></a
         >
       </nav>
@@ -134,14 +134,14 @@
           </div>
         </div>
 
-        <div class="box tutor">
+        <!-- <div class="box tutor">
           <h3 class="title">Become A Teacher</h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Perspiciatis, facilis!
           </p>
-          <a href="regis.html" class="inline-btn">Let's Get Started</a>
-        </div>
+          <a href="regis.php" class="inline-btn">Let's Get Started</a>
+        </div> -->
       </div>
     </section>
 
@@ -158,7 +158,7 @@
           </div>
           <img src="img/tn1.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Cyber Law Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.html" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -171,7 +171,7 @@
           </div>
           <img src="img/tn2.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Network Penetration Testing Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.html" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -184,7 +184,7 @@
           </div>
           <img src="img/tn3.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Computer Security Fundamental Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.html" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -197,7 +197,7 @@
           </div>
           <img src="img/tn4.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Mobile Penetration Testing Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.html" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -210,7 +210,7 @@
           </div>
           <img src="img/tn5.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Computer Forensic Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.html" class="inline-btn">View Course</a>
         </div>
       </div>
 
@@ -220,7 +220,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>Kelompok HCI</span> | All Rights Reserved
+      &copy; copyright @ 2024 by <span>Lorem Ipsum</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

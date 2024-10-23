@@ -419,6 +419,8 @@ section {
   border-radius: 0.5rem;
   background-color: var(--white);
   padding: 2rem;
+  width: 375px;
+  height: 450px;
 }
 
 .course .box-container .box .tutor {
@@ -458,6 +460,12 @@ section {
   color: var(--black);
   margin-top: 0.5rem;
   padding: 0.5rem 0;
+  height: 80px;
+  
+}
+
+.course .box-container .box .inline-btn {
+  bottom: 20px;
 }
 
 .course .more-btn {
@@ -1284,7 +1292,7 @@ section {
 }
 
 .footer {
-  position: sticky;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0;
