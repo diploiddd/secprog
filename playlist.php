@@ -116,7 +116,9 @@
               <i class="fas fa-calendar"></i><span>21-25-2022</span>
             </div>
             <div class="enroll">
+            <a href="#" class="enroll-btn">
               <i class="fas fa-enroll"></i><span>ENROLL NOW</span>
+            </a>
             </div>
           </div>
         </div>
