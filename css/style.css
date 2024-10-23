@@ -407,6 +407,11 @@ section {
   color: var(--white);
 }
 
+.course{
+  padding: 1.5rem;
+}
+
+
 .course .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
