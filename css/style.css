@@ -121,6 +121,17 @@ section {
   color: var(--white);
 }
 
+.enroll{
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--light-bg);
+}
+
 .flex-btn {
   display: flex;
   gap: 1rem;
@@ -588,6 +599,10 @@ section {
 .review .box-container .box .user .star i {
   color: var(--main-color);
   font-size: 1.8rem;
+}
+
+.playlist .enroll{
+  background-color: #8e44ad;
 }
 
 .playlist .row {

@@ -115,6 +115,9 @@
             <div class="date">
               <i class="fas fa-calendar"></i><span>21-25-2022</span>
             </div>
+            <div class="enroll">
+              <i class="fas fa-enroll"></i><span>ENROLL NOW</span>
+            </div>
           </div>
         </div>
       </div>
