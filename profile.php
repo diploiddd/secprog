@@ -85,7 +85,7 @@
           <img src="img/t1.jpeg" alt="" />
           <h3>Kocheng</h3>
           <p>Student</p>
-          <a href="update.html" class="inline-btn">Update Profile</a>
+          <a href="update.php" class="inline-btn">Update Profile</a>
         </div>
 
         <div class="box-container">

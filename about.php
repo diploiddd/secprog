@@ -89,7 +89,7 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
             consectetur id debitis, tempore magnam recusandae.
           </p>
-          <a href="course.html" class="inline-btn">Our Courses</a>
+          <a href="course.php" class="inline-btn">Our Courses</a>
         </div>
       </div>
 
