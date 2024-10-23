@@ -79,7 +79,7 @@
     </div>
 
     <section class="form-container">
-      <form action="" method="post">
+      <form action="./php/AuthController.php" method="POST">
         <h3>Welcome!</h3>
         <p>Your email <span>*</span></p>
         <input
@@ -93,20 +93,20 @@
         <p>Password <span>*</span></p>
         <input
           type="password"
-          name="pass"
+          name="password"
           placeholder="Enter your password"
           maxlength="50"
           required
           class="box"
         />
 
-        <input type="submit" name="submit" value="Login" class="btn" />
+        <input type="submit" name="login" value="Login" class="btn" />
       </form>
     </section>
 
     <footer class="footer">
       &copy; copyright @ 2024 by <span>Kelompok HCI</span> | All Rights Reserved
     </footer>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
   </body>
 </html>

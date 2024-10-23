@@ -79,13 +79,13 @@
     </div>
 
     <section class="form-container">
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="./php/AuthController.php" method="POST" enctype="multipart/form-data">
         <h3>Register New Account</h3>
-        <p>Your name <span>*</span></p>
+        <p> Username <span>*</span></p>
         <input
           type="text"
-          name="name"
-          placeholder="Enter your name"
+          name="username"
+          placeholder="Enter your username"
           maxlength="100"
           required
           class="box"
@@ -102,7 +102,7 @@
         <p>Password <span>*</span></p>
         <input
           type="password"
-          name="pass"
+          name="password"
           placeholder="Enter your password"
           maxlength="50"
           required
@@ -118,13 +118,13 @@
         />
         <p>Upload Profile Picture <span>*</span></p>
         <input type="file" name="image" accept="img/*" required class="box" />
-        <input type="submit" name="submit" value="register" class="btn" />
+        <input type="submit" name="register" value="register" class="btn" />
       </form>
     </section>
 
     <footer class="footer">
       &copy; copyright @ 2024 by <span>Kelompok HCI</span> | All Rights Reserved
     </footer>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
   </body>
 </html>
