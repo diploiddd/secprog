@@ -158,7 +158,7 @@
           </div>
           <img src="img/tn1.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Cyber Law Course</h3>
-          <a href="playlist.html" class="inline-btn">View Course</a>
+          <a href="playlist.php" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -171,7 +171,7 @@
           </div>
           <img src="img/tn2.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Network Penetration Testing Course</h3>
-          <a href="playlist.html" class="inline-btn">View Course</a>
+          <a href="playlist.php" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -184,7 +184,7 @@
           </div>
           <img src="img/tn3.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Computer Security Fundamental Course</h3>
-          <a href="playlist.html" class="inline-btn">View Course</a>
+          <a href="playlist.php" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -197,7 +197,7 @@
           </div>
           <img src="img/tn4.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Mobile Penetration Testing Course</h3>
-          <a href="playlist.html" class="inline-btn">View Course</a>
+          <a href="playlist.php" class="inline-btn">View Course</a>
         </div>
 
         <div class="box">
@@ -210,12 +210,12 @@
           </div>
           <img src="img/tn5.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Computer Forensic Course</h3>
-          <a href="playlist.html" class="inline-btn">View Course</a>
+          <a href="playlist.php" class="inline-btn">View Course</a>
         </div>
       </div>
 
       <div class="more-btn">
-        <a href="course.html" class="inline-option-btn">View All Courses</a>
+        <a href="course.php" class="inline-option-btn">View All Courses</a>
       </div>
     </section>
 
