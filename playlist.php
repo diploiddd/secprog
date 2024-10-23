@@ -119,31 +119,31 @@
     <section class="video-container">
       <h1 class="heading">Playlist Videos</h1>
       <div class="box-container">
-        <a href="video.html" class="box">
+        <a href="video.php" class="box">
           <i class="fas fa-play"></i>
           <img src="img/tn1.jpeg" alt="" />
           <h3>Complete Cyber Law Tutorial (part 01)</h3>
         </a>
 
-        <a href="video.html" class="box">
+        <a href="video.php" class="box">
           <i class="fas fa-play"></i>
           <img src="img/tn1.jpeg" alt="" />
           <h3>Complete Cyber Law Tutorial (part 02)</h3>
         </a>
 
-        <a href="video.html" class="box">
+        <a href="video.php" class="box">
           <i class="fas fa-play"></i>
           <img src="img/tn1.jpeg" alt="" />
           <h3>Complete Cyber Law Tutorial (part 03)</h3>
         </a>
 
-        <a href="video.html" class="box">
+        <a href="video.php" class="box">
           <i class="fas fa-play"></i>
           <img src="img/tn1.jpeg" alt="" />
           <h3>Complete Cyber Law Tutorial (part 04)</h3>
         </a>
 
-        <a href="video.html" class="box">
+        <a href="video.php" class="box">
           <i class="fas fa-play"></i>
           <img src="img/tn1.jpeg" alt="" />
           <h3>Complete Cyber Law Tutorial (part 05)</h3>
