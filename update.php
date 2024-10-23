@@ -128,7 +128,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>Lorem Ipsum</span> | All Rights Reserved
+      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

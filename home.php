@@ -42,8 +42,9 @@
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="logout.php" class="option-btn">Login</a>
-            <a href="regis.php" class="option-btn">Register</a>
+            <a href="login.php" <?php echo ($_SESSION['status'] == 1) ? 'style="display:none;"' : '' ?> >Login</a>
+            <a href="register.php" <?php echo ($_SESSION['status'] == 1) ? 'style="display:none;"' : '' ?>>Register</a>
+            <a href="logout.php" <?php echo ($_SESSION['status'] == 0) ? 'style="display:none;"' : '' ?>>Logout</a>
           </div>
         </div>
       </section>
@@ -220,7 +221,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>Lorem Ipsum</span> | All Rights Reserved
+      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>
