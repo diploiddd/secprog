@@ -46,9 +46,7 @@
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="login.php" <?php echo ($_SESSION['status'] == 1) ? 'style="display:none;"' : '' ?> >Login</a>
-            <a href="register.php" <?php echo ($_SESSION['status'] == 1) ? 'style="display:none;"' : '' ?>>Register</a>
-            <a href="logout.php" <?php echo ($_SESSION['status'] == 0) ? 'style="display:none;"' : '' ?>>Logout</a>
+            <a href="logout.php" class="option-btn">Logout</a>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 <?php
-    require('./database.php');
+    require('./php/database.php');
     $conn = new mysqli(
         $config['server'],
         $config['username'],

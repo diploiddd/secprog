@@ -46,8 +46,7 @@
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="login.php" class="option-btn">Login</a>
-            <a href="regis.php" class="option-btn">Register</a>
+            <a href="logout.php" class="option-btn">Logout</a>
           </div>
         </div>
       </section>
@@ -105,19 +104,19 @@
         <div class="box">
           <img src="img/tn1.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Cyber Law Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.php" class="inline-btn">View Playlists</a>
         </div>
 
         <div class="box">
           <img src="img/tn2.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Network Penetration Testing Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.php" class="inline-btn">View Playlists</a>
         </div>
 
         <div class="box">
           <img src="img/tn3.jpeg" class="thumb" alt="" />
           <h3 class="title">Complete Computer Security Fundamental Course</h3>
-          <a href="playlist.html" class="inline-btn">View Playlists</a>
+          <a href="playlist.php" class="inline-btn">View Playlists</a>
         </div>
       </div>
     </section>
