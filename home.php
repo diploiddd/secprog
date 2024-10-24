@@ -46,8 +46,16 @@
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="index.php" class="option-btn">Logout</a>
+            <a href="#" class="option-btn" onclick="confirmLogout()">Logout</a>
           </div>
+
+          <script>
+            function confirmLogout() {
+              if (confirm("Are you sure you want to logout?")) {
+                window.location.href = "index.php";
+              }
+            }
+          </script>
         </div>
       </section>
     </header>
