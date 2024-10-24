@@ -46,7 +46,7 @@
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="logout.php" class="option-btn">Logout</a>
+            <a href="index.php" class="option-btn">Logout</a>
           </div>
         </div>
       </section>
