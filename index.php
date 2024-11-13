@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>CyberCourse</title>
 
     <link
       rel="stylesheet"
@@ -14,7 +14,7 @@
   <body>
     <header class="header">
       <section class="flex">
-        <a href="/home.html" class="logo">CyberCourse</a>
+        <a href="/home.php" class="logo">CyberCourse</a>
         <form action="" method="post" class="search-form">
           <input
             type="text"
@@ -62,20 +62,13 @@
       </div>
 
       <nav class="navbar">
-        <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="about.html"
-          ><i class="fas fa-question"></i><span>About Us</span></a
-        >
-        <a href="course.html"
-          ><i class="fas fa-graduation-cap"></i><span>Courses</span></a
-        >
-        <a href="teachers.html"
-          ><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a
-        >
-        <a href="contact.html"
-          ><i class="fas fa-headset"></i><span>Contact Us</span></a
-        >
+        <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
+        <a href="course.php"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+        <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a>
+        <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
       </nav>
+      
     </div>
 
     <section class="quick-select">
