@@ -18,7 +18,7 @@
             if($result->num_rows == 1){
                 $row = $result->fetch_assoc();
                 if(md5($password) === $row['password']){
-                    $_SESSION['valid'] = $row['email'];
+                    $_SESSION['email'] = $row['email'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['password'] = $row['password'];
                     header("Location: ../home.php");
@@ -30,13 +30,14 @@
 
         else if (isset($_POST['register'])){
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-            // $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $password = md5($_POST['password']);
 
             if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
                 echo "Invalid username!";
                 exit();
             }
+            
 
             $query = "SELECT email FROM users WHERE email = ?";
             $stmt = $conn->prepare($query);
