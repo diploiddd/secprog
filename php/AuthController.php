@@ -30,7 +30,7 @@
 
         else if (isset($_POST['register'])){
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            // $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             $password = md5($_POST['password']);
 
             if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
@@ -58,13 +58,14 @@
                     header("Location: ../login.php");
                 } else{
                     echo "Registration error! Please try again later.";
-                    header("Location: ./home.php");
+                    header("Location: ../home.php");
                 }
             }
         }
         
         else if (isset($_POST['logout'])){
-
+            session_destroy(); 
+            header("Location: ../index.php"); 
         }
     }
 ?>
