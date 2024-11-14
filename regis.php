@@ -99,17 +99,20 @@
         <input
           type="password"
           name="password"
+          id="password"
           placeholder="Enter your password"
           maxlength="50"
-          required
+          required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           class="box"
         />
         <p>Confirm password <span>*</span></p>
         <input
           type="password"
           name="confpass"
+          id="confirm_password"
           placeholder="Re-enter your password"
           maxlength="50"
+          required
           class="box"
         />
         <p>Upload Profile Picture <span>*</span></p>
