@@ -39,16 +39,19 @@
           <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
         <div class="profile">
-          <img src="img/bonita.jpg" alt="" />
+          
           <?php
+
             if(isset($_SESSION['username'])){
                 ?>
+                <img src="<?php echo $_SESSION['pp']; ?>" alt=""/>
                 <h3><?php echo htmlspecialchars($_SESSION['username']); ?></h3>
                 <span><?php echo htmlspecialchars($_SESSION['role']); ?></span>
                 <?php
             }
             else{
                 ?>
+                <img src="img/profile.jpeg" alt=""/>
                 <h3>User</h3>
                 <span>Role</span>
           <?php
@@ -83,21 +86,22 @@
       </div>
 
       <div class="profile">
-        <img src="img/bonita.jpg" alt="" />
-        <?php
-        if(isset($_SESSION['username'])){
-                ?>
-                <h3 placeholder="Bonita"><?php echo htmlspecialchars($_SESSION['username']); ?></h3>
-                <span placeholder="regular"><?php echo htmlspecialchars($_SESSION['role']); ?></span>
-                <?php
-            }
-            else{
-                ?>
-                <h3>User</h3>
-                <span>Role</span>
+      <?php
+          if(isset($_SESSION['username'])){
+              ?>
+              <img src="<?php echo $_SESSION['pp']; ?>" alt=""/>
+              <h3><?php echo htmlspecialchars($_SESSION['username']); ?></h3>
+              <span><?php echo htmlspecialchars($_SESSION['role']); ?></span>
+              <?php
+          }
+          else{
+              ?>
+              <img src="img/profile.jpeg" alt=""/>
+              <h3>User</h3>
+              <span>Role</span>
           <?php
-            }
-            ?>
+          }
+          ?>
         <a href="profile.php" class="btn">View Profile</a>
       </div>
 

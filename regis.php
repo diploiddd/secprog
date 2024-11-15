@@ -17,7 +17,7 @@
   </head>
   <body>
     <section class="form-container">
-      <form action="./php/AuthController.php" method="POST" enctype="multipart/form-data">
+      <form action="./php/RegisterController.php" method="POST" enctype="multipart/form-data">
         <h3>Register New Account</h3>
         <p> Username <span>*</span></p>
         <input
