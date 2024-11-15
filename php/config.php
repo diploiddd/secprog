@@ -6,4 +6,10 @@
         $config['password'],
         $config['database']
     );
+
+    // Checks for connection errors
+    if ($conn->connect_error) {
+        die("Database connection failed: " . $conn->connect_error);
+    }
 ?>
+
