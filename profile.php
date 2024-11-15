@@ -1,5 +1,20 @@
 <?php
   require_once("navigation.php");
+  require_once("php/config.php");
+
+  if (!isset($_SESSION['user_id'])) {
+      header("Location: login.php");
+      exit();
+  }
+
+  // Fetch the user's details from the database
+  $userId = $_SESSION['user_id'];
+  $stmt = $conn->prepare("SELECT username, role, profile_image FROM users WHERE id = ?");
+  $stmt->bind_param("i", $userId);
+  $stmt->execute();
+  $stmt->bind_result($username, $role, $profileImage);
+  $stmt->fetch();
+  $stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +35,14 @@
       <h1 class="heading">Profile Details</h1>
       <div class="detail">
         <div class="user">
-          <img src="img/bonita.jpg" alt="" />
-          <h3>Bonita</h3>
-          <p>Student</p>
+          <!-- Display profile picture -->
+          <img 
+            src="<?php echo htmlspecialchars($profileImage ? 'php/getImage.php?user_id=' . $userId : 'img/bonita.jpg'); ?>" 
+            alt="Profile Picture"
+          />
+          <!-- Display username and role -->
+          <h3><?php echo htmlspecialchars($username); ?></h3>
+          <p><?php echo htmlspecialchars($role); ?></p>
           <a href="update.php" class="inline-btn">Update Profile</a>
         </div>
 

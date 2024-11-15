@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require('./php/config.php');
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +40,10 @@
           <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
         <div class="profile">
-          <img src="img/bonita.jpg" alt="" />
+        <img 
+          src="<?= isset($_SESSION['profile_image']) ? 'php/getImage.php?file=' . urlencode($_SESSION['profile_image']) : 'img/default.png'; ?>" 
+          alt="Profile Picture" 
+        />
           <?php
             if(isset($_SESSION['username'])){
                 ?>

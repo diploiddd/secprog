@@ -1,3 +1,4 @@
+
 <?php
   require_once("navigation.php");
 ?>
@@ -17,8 +18,15 @@
   </head>
   <body>
     <section class="form-container">
-      <form action="./php/AuthController.php" method="POST" enctype="multipart/form-data">
+      <form action="./php/RegisterController.php" method="POST" enctype="multipart/form-data">
         <h3>Register New Account</h3>
+        <?php
+          if (isset($_GET['error'])) {
+            echo '<p style="color: red;">' . htmlspecialchars($_GET['error']) . '</p>';
+          } elseif (isset($_GET['success'])) {
+            echo '<p style="color: green;">' . htmlspecialchars($_GET['success']) . '</p>';
+          }
+        ?>
         <p> Username <span>*</span></p>
         <input
           type="text"
@@ -44,7 +52,9 @@
           id="password"
           placeholder="Enter your password"
           maxlength="50"
-          required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           class="box"
         />
         <p>Confirm password <span>*</span></p>
@@ -58,8 +68,8 @@
           class="box"
         />
         <p>Upload Profile Picture <span>*</span></p>
-        <input type="file" name="image" accept="img/*" required class="box" />
-        <input type="submit" name="register" value="register" class="btn" />
+        <input type="file" name="image" accept="image/*" required class="box" />
+        <input type="submit" name="register" value="Register" class="btn" />
         <p>Already have an account? Login <a href="login.php">here</a></p>
       </form>
     </section>

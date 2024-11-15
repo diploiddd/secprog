@@ -24,7 +24,7 @@
                     $_SESSION['role'] = $row['role'];
                     header("Location: ../home.php");
                 } else echo "Incorrect Email or Password";
-            } else echo "Incorrect Email or Passwordnn";
+            } else echo "Incorrect Email or Password";
             
             $stmt->close();
         }
