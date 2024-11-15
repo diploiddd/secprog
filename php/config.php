@@ -6,4 +6,3 @@
         $config['password'],
         $config['database']
     );
-?>

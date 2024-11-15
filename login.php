@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
     <header class="header">
@@ -40,10 +40,10 @@
           <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
         <div class="profile">
-          <img src="img/profile.jpeg" alt="" />
-          <h3>Panda</h3>
-          <span>Student</span>
-          <a href="profile.php" class="btn">View Profile</a>
+          <!-- <img src="img/bonita.jpeg" alt="" /> -->
+          <h3>Welcome!</h3> 
+          <!-- <span>Student</span>
+          <a href="profile.php" class="btn">View Profile</a> -->
 
           <div class="flex-btn">
             <a href="login.php" class="option-btn">Login</a>
@@ -58,12 +58,12 @@
         <i class="fas fa-times"></i>
       </div>
 
-      <div class="profile">
+      <!-- <div class="profile">
         <img src="img/profile.jpeg" alt="" />
         <h3>Panda</h3>
         <span>Student</span>
         <a href="profile.php" class="btn">View Profile</a>
-      </div>
+      </div> -->
 
       <nav class="navbar">
         <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
@@ -97,11 +97,12 @@
         />
 
         <input type="submit" name="login" value="Login" class="btn" />
+        <p>Haven't registered yet? click <a href="regis.php">here</a></p>
       </form>
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
+      copyright &copy;2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

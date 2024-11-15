@@ -54,12 +54,19 @@
         <i class="fas fa-times"></i>
       </div>
 
-      <div class="profile">
+      <!-- <div class="profile">
         <img src="img/profile.jpeg" alt="" />
         <h3>Panda</h3>
         <span>Student</span>
         <a href="profile.html" class="btn">View Profile</a>
-      </div>
+      </div> -->
+
+    <!-- bikin guest ato ga nothing -->
+
+    <!-- <div class="profile" id="sidebar-profile">
+        <img id="profile-picture" src="img/anon.jpg" alt="Profile Picture">
+        <h2 id="profile-name">Guest</h2>
+    </div> -->
 
       <nav class="navbar">
         <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
@@ -127,7 +134,7 @@
           </div>
         </div>
 
-        <div class="box tutor">
+        <!-- <div class="box tutor">
           <h3 class="title">Become A Teacher</h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -135,7 +142,7 @@
           </p>
           <a href="regis.php" class="inline-btn">Let's Get Started</a>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section class="course">
@@ -213,7 +220,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>Kelompok HCI</span> | All Rights Reserved
+      copyright &copy;2024 by <span>Pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>
