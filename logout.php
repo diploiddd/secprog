@@ -1,6 +1,8 @@
 <?php
 // Mulai session
 session_start();
+// require_once('navigation.php');
+
 
 if(isset($_SESSION['username'])) {
     ?>
