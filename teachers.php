@@ -112,7 +112,7 @@
           <p>Playlists: <span>4</span></p>
           <p>Total Videos: <span>20</span></p>
           <p>Total Likes: <span>1M</span></p>
-          <a href="tprof.html" class="inline-btn">View Profile</a>
+          <a href="tprof.php" class="inline-btn">View Profile</a>
         </div>
 
         <div class="box">
@@ -126,7 +126,7 @@
           <p>Playlists: <span>4</span></p>
           <p>Total Videos: <span>20</span></p>
           <p>Total Likes: <span>1M</span></p>
-          <a href="tprof.html" class="inline-btn">View Profile</a>
+          <a href="tprof.php" class="inline-btn">View Profile</a>
         </div>
 
         <div class="box">
@@ -140,7 +140,7 @@
           <p>Playlists: <span>4</span></p>
           <p>Total Videos: <span>20</span></p>
           <p>Total Likes: <span>1M</span></p>
-          <a href="tprof.html" class="inline-btn">View Profile</a>
+          <a href="tprof.php" class="inline-btn">View Profile</a>
         </div>
       </div>
     </section>
