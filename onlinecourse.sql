@@ -87,7 +87,7 @@ CREATE TABLE `users` (
   `username` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `role` enum('regular','premium') DEFAULT 'regular'
+  `role` enum('Regular','Premium') DEFAULT 'Regular'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -95,8 +95,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `username`, `email`, `password`, `role`) VALUES
-(1, 'admin', 'admin@email.com', '@nl1n3c0uRs3', 'regular'),
-(2, 'user1', 'user1@email.com', 'user1user1', 'regular');
+(1, 'admin', 'admin@email.com', '@nl1n3c0uRs3', 'Regular'),
+(2, 'user1', 'user1@email.com', 'User1User1', 'Regular'),
+(3, 'user1', 'user1@email.com', 'User2User2', 'Regular');   
+
 
 --
 -- Indexes for dumped tables
