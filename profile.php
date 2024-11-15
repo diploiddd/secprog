@@ -40,14 +40,22 @@
           <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
         <div class="profile">
-          <img src="img/profile.jpeg" alt="" />
-          <h3>Panda</h3>
+          <img src="img/bonita.jpg" alt="" />
+          <h3>Bonita</h3>
           <span>Student</span>
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="logout.php" class="option-btn">Logout</a>
+            <a href="#" class="option-btn" onclick="confirmLogout()">Logout</a>
           </div>
+
+          <script>
+            function confirmLogout() {
+              if (confirm("Are you sure you want to logout?")) {
+                window.location.href = "index.php";
+              }
+            }
+          </script>
         </div>
       </section>
     </header>
@@ -58,8 +66,8 @@
       </div>
 
       <div class="profile">
-        <img src="img/profile.jpeg" alt="" />
-        <h3>Panda</h3>
+        <img src="img/bonita.jpg" alt="" />
+        <h3>Bonita</h3>
         <span>Student</span>
         <a href="profile.php" class="btn">View Profile</a>
       </div>
@@ -77,8 +85,8 @@
       <h1 class="heading">Profile Details</h1>
       <div class="detail">
         <div class="user">
-          <img src="img/t1.jpeg" alt="" />
-          <h3>Kocheng</h3>
+          <img src="img/bonita.jpg" alt="" />
+          <h3>Bonita</h3>
           <p>Student</p>
           <a href="update.php" class="inline-btn">Update Profile</a>
         </div>
@@ -121,7 +129,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
+      &copy; copyright @2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

@@ -17,7 +17,7 @@
 
             if($result->num_rows == 1){
                 $row = $result->fetch_assoc();
-                if(md5($password) === $row['password']){
+                if(password_verify($password, $row['password'])){
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['password'] = $row['password'];
@@ -31,8 +31,8 @@
         else if (isset($_POST['register'])){
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $password = md5($_POST['password']);
-
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            
             if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
                 echo "Invalid username!";
                 exit();

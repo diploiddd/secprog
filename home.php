@@ -40,8 +40,8 @@
           <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
         <div class="profile">
-          <img src="img/profile.jpeg" alt="" />
-          <h3>Panda</h3>
+          <img src="img/bonita.jpg" alt="" />
+          <h3>Bonita</h3>
           <span>Student</span>
           <a href="profile.php" class="btn">View Profile</a>
 
@@ -66,8 +66,8 @@
       </div>
 
       <div class="profile">
-        <img src="img/profile.jpeg" alt="" />
-        <h3>Panda</h3>
+        <img src="img/bonita.jpg" alt="" />
+        <h3>Bonita</h3>
         <span>Student</span>
         <a href="profile.php" class="btn">View Profile</a>
       </div>
@@ -223,7 +223,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
+      copyright &copy;2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

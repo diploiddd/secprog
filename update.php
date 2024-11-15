@@ -123,7 +123,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
+      copyright &copy;2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

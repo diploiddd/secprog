@@ -118,11 +118,12 @@
         <p>Upload Profile Picture <span>*</span></p>
         <input type="file" name="image" accept="img/*" required class="box" />
         <input type="submit" name="register" value="register" class="btn" />
+        <p>Already have an account? Login <a href="login.php">here</a></p>
       </form>
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
+      copyright &copy;2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>

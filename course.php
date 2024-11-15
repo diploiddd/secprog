@@ -46,7 +46,7 @@
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="logout.php" class="option-btn">Logout</a>
+            <a href="index.php" class="option-btn">Logout</a>
           </div>
         </div>
       </section>
@@ -144,7 +144,7 @@
     </section>
 
     <footer class="footer">
-      &copy; copyright @ 2024 by <span>pengabdi</span> | All Rights Reserved
+      copyright &copy;2024 by <span>pengabdi</span> | All Rights Reserved
     </footer>
     <script src="js/script.js"></script>
   </body>
