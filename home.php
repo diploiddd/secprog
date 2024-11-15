@@ -41,21 +41,34 @@
         </div>
         <div class="profile">
           <img src="img/bonita.jpg" alt="" />
-          <h3>Bonita</h3>
-          <span>Student</span>
+          <h3 placeholder="Bonita"><?php echo htmlspecialchars($_SESSION['username']); ?></h3>
+          <span placeholder="regular"><?php echo htmlspecialchars($_SESSION['role']); ?></span>
           <a href="profile.php" class="btn">View Profile</a>
 
           <div class="flex-btn">
-            <a href="#" class="option-btn" onclick="confirmLogout()">Logout</a>
+            <!-- <a href="#" class="option-btn" onclick="confirmLogout()">Logout</a> -->
+            <?php
+            if(isset($_SESSION['username'])){
+            ?>
+              <a href="logout.php" class="option-btn">Logout</a>
+            <?php
+            }
+            else{
+            ?>
+              <a href="login.php" class="option-btn">Login</a>
+              <a href="regis.php" class="option-btn">Register</a>
+            <?php
+            }
+            ?>
           </div>
 
-          <script>
+          <!-- <script>
             function confirmLogout() {
               if (confirm("Are you sure you want to logout?")) {
                 window.location.href = "index.php";
               }
             }
-          </script>
+          </script> -->
         </div>
       </section>
     </header>
@@ -67,8 +80,8 @@
 
       <div class="profile">
         <img src="img/bonita.jpg" alt="" />
-        <h3>Bonita</h3>
-        <span>Student</span>
+        <h3 placeholder="Bonita"><?php echo htmlspecialchars($_SESSION['username']); ?></h3>
+        <span placeholder="regular"><?php echo htmlspecialchars($_SESSION['role']); ?></span>
         <a href="profile.php" class="btn">View Profile</a>
       </div>
 

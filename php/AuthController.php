@@ -21,6 +21,7 @@
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['password'] = $row['password'];
+                    $_SESSION['role'] = $row['role'];
                     header("Location: ../home.php");
                 } else echo "Incorrect Email or Password";
             } else echo "Incorrect Email or Passwordnn";
@@ -65,6 +66,7 @@
         }
         
         else if (isset($_POST['logout'])){
+            session_unset();
             session_destroy(); 
             header("Location: ../index.php"); 
         }

@@ -86,7 +86,7 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL,
   `username` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   `role` enum('regular','premium') DEFAULT 'regular'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
