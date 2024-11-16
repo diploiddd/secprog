@@ -75,7 +75,7 @@
             accusamus blanditiis. Iure sed quo voluptatibus?
           </p>
           <div class="user">
-            <img src="img/teacher/t2.jpeg" alt="" />
+            <img src="img/teachers/t2.jpeg" alt="" />
             <div>
               <h3>Kekeyre</h3>
               <div class="star">
@@ -95,7 +95,7 @@
             accusamus blanditiis. Iure sed quo voluptatibus?
           </p>
           <div class="user">
-            <img src="img/teacher/t3.jpeg" alt="" />
+            <img src="img/teachers/t3.jpeg" alt="" />
             <div>
               <h3>Fuio</h3>
               <div class="star">
@@ -115,7 +115,7 @@
             accusamus blanditiis. Iure sed quo voluptatibus?
           </p>
           <div class="user">
-            <img src="img/teacher/t4.jpeg" alt="" />
+            <img src="img/teachers/t4.jpeg" alt="" />
             <div>
               <h3>Olang</h3>
               <div class="star">

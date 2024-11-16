@@ -94,7 +94,7 @@
           </div>
           <p class="text">This is emejingg</p>
           <form action="" method="post" class="flex-btn">
-            <button type="submit" name="edit_comment" class="inline-option-btn">
+            <!-- <button type="submit" name="edit_comment" class="inline-option-btn">
               Edit Comment
             </button>
             <button
@@ -103,7 +103,7 @@
               class="inline-delete-btn"
             >
               Delete Comment
-            </button>
+            </button> -->
           </form>
         </div>
 
@@ -117,7 +117,7 @@
           </div>
           <p class="text">wew</p>
           <form action="" method="post" class="flex-btn">
-            <button type="submit" name="edit_comment" class="inline-option-btn">
+            <!-- <button type="submit" name="edit_comment" class="inline-option-btn">
               Edit Comment
             </button>
             <button
@@ -126,7 +126,7 @@
               class="inline-delete-btn"
             >
               Delete Comment
-            </button>
+            </button> -->
           </form>
         </div>
       </div>
