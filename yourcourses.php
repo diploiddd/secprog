@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teachers</title>
+    <title>Your Courses</title>
 
     <link
       rel="stylesheet"
@@ -17,7 +17,7 @@
   </head>
   <body>
     <section class="teacher">
-      <h1 class="heading">Expert Teachers</h1>
+      <h1 class="heading">Your Courses</h1>
       <form action="" method="post" class="search-teacher">
         <input
           type="text"
