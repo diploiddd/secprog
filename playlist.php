@@ -178,14 +178,37 @@
   <section class="video-container">
       <h1 class="heading">Playlist Videos</h1>
       <div class="box-container">
-          <a href="video.php" class="box">
-              <i class="fas fa-play"></i>
-              <img src="<?php echo htmlspecialchars($thumbnail_path); ?>" alt="" />
-              <h3><?php echo htmlspecialchars($course_title) . " (part 01)"; ?></h3>
-          </a>
-          <!-- Repeat for other videos -->
+        <a href="video.php" class="box">
+          <i class="fas fa-play"></i>
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
+          <h3><?php echo htmlspecialchars($course_title) . " (part 01)"; ?></h3>
+        </a>
+
+        <a href="video.php" class="box">
+          <i class="fas fa-play"></i>
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
+          <h3><?php echo htmlspecialchars($course_title) . " (part 02)"; ?></h3>
+        </a>
+
+        <a href="video.php" class="box">
+          <i class="fas fa-play"></i>
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
+          <h3><?php echo htmlspecialchars($course_title) . " (part 03)"; ?></h3>
+        </a>
+
+        <a href="video.php" class="box">
+          <i class="fas fa-play"></i>
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
+          <h3><?php echo htmlspecialchars($course_title) . " (part 04)"; ?></h3>
+        </a>
+
+        <a href="video.php" class="box">
+          <i class="fas fa-play"></i>
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
+          <h3><?php echo htmlspecialchars($course_title) . " (part 05)"; ?></h3>
+        </a>
       </div>
-  </section>
+    </section>
 
   <footer class="footer">
       copyright &copy;2024 by <span>pengabdi</span> | All Rights Reserved
