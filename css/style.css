@@ -1340,6 +1340,36 @@ section {
   background-color: var(--light-bg);
 }
 
+.premium-only {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: relative;
+}
+.premium-only .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.premium-only .inline-btn {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.premium-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: gold;
+  color: black;
+  padding: 5px;
+  font-size: 0.9em;
+  z-index: 2;
+  border-radius: 3px;
+}
+
 .footer {
   position: relative;
   bottom: 0;

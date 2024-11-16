@@ -2,6 +2,10 @@
   require_once("navigation.php");
   require_once("php/config.php");
 
+
+  // Check if user is logged in and retrieve role
+  $user_role = isset($_SESSION['role']) ? $_SESSION['role'] : 'Regular';
+
   $query = "SELECT c.course_id, c.course_title, c.course_description, c.is_premium, c.course_created_date, 
                     t.teacher_id, t.teachers_name
             FROM courses c
@@ -37,7 +41,6 @@
                   $teacher_id = $row['teacher_id'];
                   $teacher_name = $row['teachers_name'];
 
-
                   // Thumbnail path logic for the course
                   $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
 
@@ -54,9 +57,14 @@
                       $teacher_image_path = "img/default-teacher.jpeg"; 
                   }
 
+                  // Add premium class if needed
+                  $premium_class = ($is_premium && $user_role !== 'Premium') ? 'premium-only' : '';
                   ?>
 
-                  <div class="box">
+                  <div class="box <?php echo $premium_class; ?>">
+                    <?php if ($is_premium): ?>
+                      <div class="premium-label">Premium</div>
+                    <?php endif; ?>
                     <div class="tutor">
                       <img src="<?php echo $teacher_image_path; ?>" alt="<?php echo $teacher_name; ?>" />
                       <div>
@@ -69,8 +77,11 @@
                     <div class="course-description">
                         <p><?php echo htmlspecialchars($course_description); ?></p>
                     </div>
-                    <a href="playlist.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
-                    
+                    <?php if ($is_premium && $user_role !== 'Premium'): ?>
+                      <span class="inline-btn">Premium Only</span>
+                      <?php else: ?>
+                      <a href="playlist.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
+                    <?php endif; ?>
                   </div>
 
                   <?php
