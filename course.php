@@ -41,17 +41,17 @@
                   // Thumbnail path logic for the course
                   $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
 
-                  // Check if the thumbnail file exists
+                  // Checks thumbnail
                   if (!file_exists($thumbnail_path)) {
-                      $thumbnail_path = "img/default-thumbnail.jpeg"; // Default thumbnail
+                      $thumbnail_path = "img/default-thumbnail.jpeg";
                   }
 
-                  // Teacher image path logic (based on the teacher_id linked to the course)
-                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; // Link teacher's image by teacher_id
+                  // gets teacher's path
+                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; 
 
-                  // Check if the teacher image file exists
+                  // Checks teacher's image
                   if (!file_exists($teacher_image_path)) {
-                      $teacher_image_path = "img/default-teacher.jpeg"; // Default teacher image
+                      $teacher_image_path = "img/default-teacher.jpeg"; 
                   }
 
                   ?>

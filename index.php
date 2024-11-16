@@ -41,13 +41,9 @@
           <h3 class="title">Top Categories</h3>
           <div class="flex">
             <a href="#"><i class="fas fa-code"></i><span>Development</span></a>
-            <a href="#"
-              ><i class="fas fa-chart-simple"></i><span>Business</span></a
-            >
+            <a href="#"><i class="fas fa-chart-simple"></i><span>Business</span></a>
             <a href="#"><i class="fas fa-pen"></i><span>Design</span></a>
-            <a href="#"
-              ><i class="fas fa-chart-line"></i><span>Marketing</span></a
-            >
+            <a href="#"><i class="fas fa-chart-line"></i><span>Marketing</span></a>
             <a href="#"><i class="fas fa-music"></i><span>Music</span></a>
             <a href="#"><i class="fas fa-camera"></i><span>Photograph</span></a>
             <a href="#"><i class="fas fa-cog"></i><span>Software</span></a>
@@ -58,25 +54,12 @@
         <div class="box">
           <h3 class="title">Popular Topics</h3>
           <div class="flex">
-            <a href="#"
-              ><i class="fas fa-wifi"></i><span>Network Pentest</span></a
-            >
-            <a href="#"
-              ><i class="fas fa-mobile"></i><span>Mobile Pentest</span></a
-            >
-            <a href="#"
-              ><i class="fas fa-computer"></i
-              ><span>Computer Security Fundamental</span></a
-            >
-            <a href="#"
-              ><i class="fas fa-user-md"></i><span>Computer Forensic</span></a
-            >
-            <a href="#"
-              ><i class="fas fa-balance-scale"></i><span>Cyber Law</span></a
-            >
-            <a href="#"
-              ><i class="fas fa-gears"></i><span>Reverse Engineering</span></a
-            >
+            <a href="#"><i class="fas fa-wifi"></i><span>Network Pentest</span></a>
+            <a href="#"><i class="fas fa-mobile"></i><span>Mobile Pentest</span></a>
+            <a href="#"><i class="fas fa-computer"></i><span>Computer Security Fundamental</span></a>
+            <a href="#"<i class="fas fa-user-md"></i><span>Computer Forensic</span></a>
+            <a href="#"><i class="fas fa-balance-scale"></i><span>Cyber Law</span></a>
+            <a href="#"><i class="fas fa-gears"></i><span>Reverse Engineering</span></a>
           </div>
         </div>
     </section>
@@ -99,15 +82,15 @@
                   // Thumbnail path logic for the course
                   $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
 
-                  // Check if the thumbnail file exists
+                  // Checks thumbnail
                   if (!file_exists($thumbnail_path)) {
-                      $thumbnail_path = "img/default-thumbnail.jpeg"; // Default thumbnail
+                      $thumbnail_path = "img/default-thumbnail.jpeg";
                   }
 
-                  // Teacher image path logic (based on the teacher_id linked to the course)
-                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg";
+                  // gets teacher's path
+                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; 
 
-                  // Check if the teacher image file exists
+                  // Checks teacher's image
                   if (!file_exists($teacher_image_path)) {
                       $teacher_image_path = "img/default-teacher.jpeg"; 
                   }
