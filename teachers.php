@@ -53,7 +53,7 @@ $result = mysqli_query($conn, $query);
                 $likes_count = $row['likes_count'];
 
                 // Generate the teacher's profile picture path
-                $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg";
+                $teacher_image_path = "img/teachers/t" . htmlspecialchars($teacher_id) . ".jpeg";
                 if (!file_exists($teacher_image_path)) {
                     $teacher_image_path = "img/default-teacher.jpeg";
                 }

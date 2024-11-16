@@ -70,13 +70,13 @@
         <?php
           if ($result && $result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                  $course_id = $row['course_id'];
-                  $course_title = $row['course_title'];
-                  $course_description = $row['course_description'];
-                  $date = $row['course_created_date'];
-                  $is_premium = $row['is_premium'];
-                  $teacher_id = $row['teacher_id'];
-                  $teacher_name = $row['teachers_name'];
+                  $course_id = htmlspecialchars($row['course_id']);
+                  $course_title = htmlspecialchars($row['course_title']);
+                  $course_description = htmlspecialchars($row['course_description']);
+                  $date = htmlspecialchars($row['course_created_date']);
+                  $is_premium = htmlspecialchars($row['is_premium']);
+                  $teacher_id = htmlspecialchars($row['teacher_id']);
+                  $teacher_name = htmlspecialchars($row['teachers_name']);
 
 
                   // Thumbnail path logic for the course

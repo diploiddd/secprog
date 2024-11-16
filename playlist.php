@@ -80,7 +80,7 @@
           $course_created_date = $row['course_created_date'];
 
           // course thumbnail
-          $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
+          $thumbnail_path = "img/thumbnails/tn" . htmlspecialchars($course_id) . ".jpeg";
           if (!file_exists($thumbnail_path)) {
               $thumbnail_path = "img/default-thumbnail.jpeg";
           }

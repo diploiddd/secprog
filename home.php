@@ -72,50 +72,50 @@
         <?php
           if ($result && $result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                  $course_id = $row['course_id'];
-                  $course_title = $row['course_title'];
-                  $course_description = $row['course_description'];
-                  $date = $row['course_created_date'];
-                  $is_premium = $row['is_premium'];
-                  $teacher_id = $row['teacher_id'];
-                  $teacher_name = $row['teachers_name'];
+                $course_id = htmlspecialchars($row['course_id']);
+                $course_title = htmlspecialchars($row['course_title']);
+                $course_description = htmlspecialchars($row['course_description']);
+                $date = htmlspecialchars($row['course_created_date']);
+                $is_premium = htmlspecialchars($row['is_premium']);
+                $teacher_id = htmlspecialchars($row['teacher_id']);
+                $teacher_name = htmlspecialchars($row['teachers_name']);
 
 
-                  // Thumbnail path logic for the course
-                  $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
+                // Thumbnail path logic for the course
+                $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
 
-                  // Check if the thumbnail file exists
-                  if (!file_exists($thumbnail_path)) {
-                      $thumbnail_path = "img/default-thumbnail.jpeg"; // Default thumbnail
-                  }
+                // Check if the thumbnail file exists
+                if (!file_exists($thumbnail_path)) {
+                    $thumbnail_path = "img/default-thumbnail.jpeg"; // Default thumbnail
+                }
 
-                  // Teacher image path logic (based on the teacher_id linked to the course)
-                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; 
+                // Teacher image path logic (based on the teacher_id linked to the course)
+                $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; 
 
-                  // Check if the teacher image file exists
-                  if (!file_exists($teacher_image_path)) {
-                      $teacher_image_path = "img/default-teacher.jpeg"; 
-                  }
+                // Check if the teacher image file exists
+                if (!file_exists($teacher_image_path)) {
+                    $teacher_image_path = "img/default-teacher.jpeg"; 
+                }
 
-                  ?>
+                ?>
 
-                  <div class="box">
-                    <div class="tutor">
-                      <img src="<?php echo $teacher_image_path; ?>" alt="<?php echo $teacher_name; ?>" />
-                      <div>
-                        <h3><?php echo htmlspecialchars($teacher_name); ?></h3> 
-                        <span><?php echo $date; ?></span>
-                      </div>
+                <div class="box">
+                  <div class="tutor">
+                    <img src="<?php echo $teacher_image_path; ?>" alt="<?php echo $teacher_name; ?>" />
+                    <div>
+                      <h3><?php echo htmlspecialchars($teacher_name); ?></h3> 
+                      <span><?php echo $date; ?></span>
                     </div>
-                    <img src="<?php echo $thumbnail_path; ?>" class="thumb" alt="Course Thumbnail" />
-                    <h3 class="title"><?php echo htmlspecialchars($course_title); ?></h3>
-                    <div class="course-description">
-                        <p><?php echo htmlspecialchars($course_description); ?></p>
-                    </div>
-                    <a href="playlist.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
                   </div>
+                  <img src="<?php echo $thumbnail_path; ?>" class="thumb" alt="Course Thumbnail" />
+                  <h3 class="title"><?php echo htmlspecialchars($course_title); ?></h3>
+                  <div class="course-description">
+                      <p><?php echo htmlspecialchars($course_description); ?></p>
+                  </div>
+                  <a href="playlist.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
+                </div>
 
-                  <?php
+                <?php
               }
           } else {
               echo "<p>No courses found!</p>";
