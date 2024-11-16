@@ -5,25 +5,31 @@
   $enroll_status = "";  // initializes enrollment status message
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['enroll_now'])) {
-      if (isset($_SESSION['user_id']) && isset($_POST['course_id'])) {
-          $user_id = $_SESSION['user_id'];
-          $course_id = $_POST['course_id'];
-          $enrollment_date = date("Y-m-d H:i:s");  // Current timestamp when enrolled
+    if (isset($_SESSION['user_id']) && isset($_POST['course_id'])) {
+        $user_id = $_SESSION['user_id'];
+        $course_id = $_POST['course_id'];
+        $enrollment_date = date("Y-m-d H:i:s");  // date enrolled
 
-          // insert into db
-          $enroll_query = "INSERT INTO enrollments (user_id, course_id, enrollment_date) VALUES ('$user_id', '$course_id', '$enrollment_date')";
+        $check_query = "SELECT * FROM enrollments WHERE user_id = '$user_id' AND course_id = '$course_id'";
+        $check_result = mysqli_query($conn, $check_query);
 
-          if (mysqli_query($conn, $enroll_query)) {
-              // Enrollment success
-              $enroll_status = "You have successfully enrolled in the course!";
-          } else {
-              // Enrollment error
-              $enroll_status = "There was an error enrolling you. Please try again.";
-          }
-      } else {
-          $enroll_status = "You must be logged in to enroll.";
-      }
-  }
+        if (mysqli_num_rows($check_result) > 0) {
+            $enroll_status = "You are already enrolled in this course!";
+        } else {
+            $enroll_query = "INSERT INTO enrollments (user_id, course_id, enrollment_date) VALUES ('$user_id', '$course_id', '$enrollment_date')";
+
+            if (mysqli_query($conn, $enroll_query)) {
+                // success
+                $enroll_status = "You have successfully enrolled in the course!";
+            } else {
+                // error :(
+                $enroll_status = "There was an error enrolling you. Please try again.";
+            }
+        }
+    } else {
+        $enroll_status = "You must be logged in to enroll.";
+    }
+}
 
   if (isset($_GET['course_id'])) {
       $course_id = $_GET['course_id'];
