@@ -75,9 +75,9 @@
             accusamus blanditiis. Iure sed quo voluptatibus?
           </p>
           <div class="user">
-            <img src="img/t2.jpeg" alt="" />
+            <img src="img/teacher/t2.jpeg" alt="" />
             <div>
-              <h3>Kocheng</h3>
+              <h3>Kekeyre</h3>
               <div class="star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -95,9 +95,9 @@
             accusamus blanditiis. Iure sed quo voluptatibus?
           </p>
           <div class="user">
-            <img src="img/t3.jpeg" alt="" />
+            <img src="img/teacher/t3.jpeg" alt="" />
             <div>
-              <h3>Kocheng</h3>
+              <h3>Fuio</h3>
               <div class="star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -115,9 +115,9 @@
             accusamus blanditiis. Iure sed quo voluptatibus?
           </p>
           <div class="user">
-            <img src="img/t4.jpeg" alt="" />
+            <img src="img/teacher/t4.jpeg" alt="" />
             <div>
-              <h3>Kocheng</h3>
+              <h3>Olang</h3>
               <div class="star">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
