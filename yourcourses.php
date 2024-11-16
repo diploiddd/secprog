@@ -77,7 +77,7 @@
                     <div class="course-description">
                         <p><?php echo htmlspecialchars($course_description); ?></p>
                     </div>
-                    <a href="playlist.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
+                    <a href="enrolledcourse.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
                     
                   </div>
                   <?php
