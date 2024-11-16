@@ -85,7 +85,7 @@
           } else {
             ?>
               <p style="font-size: 2.2rem; margin-top: 2rem; color: var(--black); text-align: center;">
-                Oh no! It looks like you haven't enrolled in any courses yet. <a href="courses.php">Start enrolling now</a>
+                Oh no! It looks like you haven't enrolled in any courses yet. <a href="course.php">Start enrolling now</a>
               </p>
 
             <?php
