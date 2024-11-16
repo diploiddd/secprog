@@ -53,6 +53,8 @@
           if (!file_exists($teacher_image_path)) {
               $teacher_image_path = "img/default-teacher.jpeg";
           }
+
+          
       } else {
           echo "<p>Course not found!</p>";
       }
@@ -126,31 +128,31 @@
       <div class="box-container">
         <a href="video.php" class="box">
           <i class="fas fa-play"></i>
-          <img src="img/tn1.jpeg" alt="" />
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
           <h3><?php echo htmlspecialchars($course_title) . " (part 01)"; ?></h3>
         </a>
 
         <a href="video.php" class="box">
           <i class="fas fa-play"></i>
-          <img src="img/tn1.jpeg" alt="" />
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
           <h3><?php echo htmlspecialchars($course_title) . " (part 02)"; ?></h3>
         </a>
 
         <a href="video.php" class="box">
           <i class="fas fa-play"></i>
-          <img src="img/tn1.jpeg" alt="" />
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
           <h3><?php echo htmlspecialchars($course_title) . " (part 03)"; ?></h3>
         </a>
 
         <a href="video.php" class="box">
           <i class="fas fa-play"></i>
-          <img src="img/tn1.jpeg" alt="" />
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
           <h3><?php echo htmlspecialchars($course_title) . " (part 04)"; ?></h3>
         </a>
 
         <a href="video.php" class="box">
           <i class="fas fa-play"></i>
-          <img src="img/tn1.jpeg" alt="" />
+          <img src="<?php echo $thumbnail_path; ?>" alt="" />
           <h3><?php echo htmlspecialchars($course_title) . " (part 05)"; ?></h3>
         </a>
       </div>

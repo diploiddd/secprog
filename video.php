@@ -19,7 +19,7 @@
         <video
           src="img/"
           class="video"
-          poster="img/tn1.jpeg"
+          poster="img/thumbnails/tn1.jpeg"
           controls
           autoplay
         ></video>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="tutor">
-          <img src="img/t1.jpeg" alt="" />
+          <img src="img/teachers/t1.jpeg" alt="" />
           <div>
             <h3>Kocheng</h3>
             <span>Developer</span>
@@ -86,7 +86,7 @@
       <div class="show-comment">
         <div class="box">
           <div class="user">
-            <img src="img/t1.jpeg" alt="" />
+            <img src="img/teachers/t1.jpeg" alt="" />
             <div>
               <h3>Kocheng</h3>
               <span>21-25-2022</span>
@@ -109,9 +109,9 @@
 
         <div class="box">
           <div class="user">
-            <img src="img/t2.jpeg" alt="" />
+            <img src="img/teachers/t2.jpeg" alt="" />
             <div>
-              <h3>Gigi</h3>
+              <h3>Raffe</h3>
               <span>21-25-2022</span>
             </div>
           </div>
