@@ -17,7 +17,11 @@
   </head>
   <body>
     <section class="form-container">
+<<<<<<< HEAD
       <form action="php/RegisterController.php" method="POST" enctype="multipart/form-data">
+=======
+      <form action="./php/RegisterController.php" method="POST" enctype="multipart/form-data">
+>>>>>>> 49288c5db3e6d4969297e87595fd3447a4efc643
         <h3>Register New Account</h3>
         <p> Username <span>*</span></p>
         <input

@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 require('config.php');
 // require('FileUpload.php');  // Import file upload handling logic
+=======
+require('../php/config.php');
+require('FileUpload.php');  // Import file upload handling logic
+>>>>>>> 49288c5db3e6d4969297e87595fd3447a4efc643
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
 
@@ -62,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
 
 
         // Insert new user data into the database
-        $query2 = "INSERT INTO users(username, email, password, profile_image) VALUES (?, ?, ?, ?)";
+        $query2 = "INSERT INTO users(username, email, password, pp) VALUES (?, ?, ?, ?)";
         $stmt1 = $conn->prepare($query2);
         $stmt1->bind_param("ssss", $username, $email, $password, $profileImage);
         if ($stmt1->execute()) {
@@ -72,4 +77,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
         }
     }
 }
+else
 ?>

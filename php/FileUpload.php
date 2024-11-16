@@ -1,6 +1,6 @@
 <?php
 function handleFileUpload($fileInputName) {
-    $uploadDir = '/var/www/uploads/';
+    $uploadDir = '../var/www/uploads/';
     
     // allows jpg, png, jpeng and file size limit (5 MB)
     $allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
@@ -15,10 +15,10 @@ function handleFileUpload($fileInputName) {
 
         // Generate a safe, unique file name
         $fileExtension = pathinfo($_FILES[$fileInputName]['name'], PATHINFO_EXTENSION);
-        $newFileName = uniqid('profile_', true) . '.' . $fileExtension;
-        $destination = $uploadDir . $newFileName;
+        $newFileName = $uploadDir . uniqid('profile_', true) . '.' . $fileExtension;
+        // $destination = $uploadDir . $newFileName;
 
-        if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], $destination)) {
+        if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], $newFileName)) {
             return $newFileName;  // file upload accepted
         }
     }

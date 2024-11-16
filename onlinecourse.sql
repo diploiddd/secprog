@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2024 at 03:51 AM
+-- Generation Time: Nov 15, 2024 at 06:06 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,18 +87,20 @@ CREATE TABLE `users` (
   `username` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `role` enum('Regular','Premium') DEFAULT 'Regular'
+  `role` enum('Regular','Premium') DEFAULT 'Regular',
+  `pp` varchar(200) DEFAULT 'profile.jpeg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `username`, `email`, `password`, `role`) VALUES
-(1, 'admin', 'admin@email.com', '@nl1n3c0uRs3', 'Regular'),
-(2, 'user1', 'user1@email.com', 'User1User1', 'Regular'),
-(3, 'user1', 'user1@email.com', 'User2User2', 'Regular');   
-
+INSERT INTO `users` (`ID`, `username`, `email`, `password`, `role`, `pp`) VALUES
+(1, 'admin', 'admin@email.com', '$2y$10$Y04QOx2mv3ARTUQ45dMqq.QfgVwsm8YO6t625L1ogSUGsGOVpYdCa', 'Premium', 'img/tyler.jpeg'),
+(2, 'user1', 'user1@email.com', '$2y$10$xgjgoaCqTbokreSZ4F5Bpep5bcxvl/V5x/OoXsG0GvKnNe0cZXYS2', 'Regular', 'img/bonita.jpg'),
+(3, 'user2', 'user2@email.com', '$2y$10$YkgYRd5edOt4IGsSnZTrZ.kbm6Kmk1d/SATg34jcy2b4FnWGC4hfq', 'Regular', 'img/profile.jpeg'),
+(4, 'user3', 'user3@email.com', '$2y$10$4UcKSUxNKBvxtKqqhxjCCOgQRkzIxp/h/ofCP8oBOkftF3hwuRT7u', 'Regular', '../var/www/uploads/profile_67377b63adac10.16445558.png'),
+(5, 'user4', 'user4@email.com', '$2y$10$QnXiUSJUB7VSjmKdCk0swOnGWFx8j2a0u0/QS1FR2Zpev1rmTCqVS', 'Regular', '../var/www/uploads/profile_67377f0bd87e03.67256037.png');
 
 --
 -- Indexes for dumped tables
@@ -157,7 +159,7 @@ ALTER TABLE `enrollments`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
