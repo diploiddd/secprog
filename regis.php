@@ -17,7 +17,7 @@
   </head>
   <body>
     <section class="form-container">
-      <form action="./php/AuthController.php" method="POST" enctype="multipart/form-data">
+      <form action="php/RegisterController.php" method="POST" enctype="multipart/form-data">
         <h3>Register New Account</h3>
         <p> Username <span>*</span></p>
         <input
@@ -58,7 +58,7 @@
           class="box"
         />
         <p>Upload Profile Picture <span>*</span></p>
-        <input type="file" name="image" accept="img/*" required class="box" />
+        <input type="file" name="profilepic" required class="box" />
         <input type="submit" name="register" value="register" class="btn" />
         <p>Already have an account? Login <a href="login.php">here</a></p>
       </form>

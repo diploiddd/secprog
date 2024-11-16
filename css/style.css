@@ -434,7 +434,7 @@ section {
 }
 
 .course{
-  padding: 1.5rem;
+  padding: 1.8rem;
 }
 
 
@@ -451,7 +451,7 @@ section {
   background-color: var(--white);
   padding: 2rem;
   width: 375px;
-  height: 450px;
+  height: 470px;
 }
 
 .course .box-container .box .tutor {
@@ -503,6 +503,14 @@ section {
   margin-top: 2rem;
   text-align: center;
 }
+
+.course-description {
+  border-radius: 5px;
+  font-size: 15px;
+  color: #333; /* Dark gray text */
+  line-height: 1.5;
+}
+
 
 .about .row {
   display: flex;

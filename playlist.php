@@ -1,6 +1,8 @@
 <?php
-  require_once("navigation.php");
-?>
+  require("navigation.php");
+  //TODO: Get the courses from the database automatically
+  $course_id = 1; // BELOM DI SET Example course ID for "Complete Cyber Law Tutorial"
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +23,7 @@
       <h1 class="heading">Playlist Details</h1>
       <div class="row">
         <div class="columns">
-          <form action="" method="post" class="save_list">
+          <form action="" method="POST" class="save_list">
             <button type="submit" name="save_list">
               <i class="far fa-bookmark"></i><span>Save Playlist</span>
             </button>
@@ -50,11 +52,15 @@
             <div class="date">
               <i class="fas fa-calendar"></i><span>21-25-2022</span>
             </div>
-            <div class="enroll">
-            <a href="#" class="enroll-btn">
-              <i class="fas fa-enroll"></i><span>ENROLL NOW</span>
-            </a>
-            </div>
+            <!-- <div class="enroll"> -->
+              <!-- <a href="#" class="enroll-btn"> -->
+                <!-- <i class="fas fa-enroll"></i><span>ENROLL NOW</span> -->
+              <!-- </a> -->
+            <!-- </div> -->
+            <form action="php/RegisterController.php" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="course_id" value="<?php echo $course_id; ?>" />
+              <input type="submit" name="enroll_now" value="ENROLL NOW!" class="btn" />
+            </form>
           </div>
         </div>
       </div>
