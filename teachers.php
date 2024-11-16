@@ -1,5 +1,10 @@
 <?php
-  require_once("navigation.php");
+require_once("navigation.php");
+require_once("php/config.php"); // Assuming this connects to your database
+
+// Fetch teacher data
+$query = "SELECT teacher_id, teachers_name, playlists_count, video_count, likes_count FROM teachers";
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -33,58 +38,48 @@
         ></button>
       </form>
 
-      <!-- <div class="regisBox">
-        <h3>Become a Teacher</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quis?
-        </p>
-        <a href="regis.html" class="inline-btn">Let's Get Started!</a>
-      </div> -->
-
       <br>
 
       <div class="box-container">
-        <div class="box">
-          <div class="tutor">
-            <img src="img/teachers/t1.jpeg" alt="" />
-            <div>
-              <h3>Kocheng</h3>
-              <span>Developer</span>
-            </div>
-          </div>
-          <p>Playlists: <span>4</span></p>
-          <p>Total Videos: <span>20</span></p>
-          <p>Total Likes: <span>1M</span></p>
-          <a href="tprof.php" class="inline-btn">View Profile</a>
-        </div>
+        <?php
+        if ($result && mysqli_num_rows($result) > 0) {
+            // Iterate through each teacher
+            while ($row = mysqli_fetch_assoc($result)) {
+                // Fetch teacher data
+                $teacher_id = $row['teacher_id'];
+                $teacher_name = htmlspecialchars($row['teachers_name']);
+                $playlists_count = $row['playlists_count'];
+                $video_count = $row['video_count'];
+                $likes_count = $row['likes_count'];
 
-        <div class="box">
-          <div class="tutor">
-            <img src="img/teachers/t2.jpeg" alt="" />
-            <div>
-              <h3>Raffe</h3>
-              <span>Developer</span>
-            </div>
-          </div>
-          <p>Playlists: <span>4</span></p>
-          <p>Total Videos: <span>20</span></p>
-          <p>Total Likes: <span>1M</span></p>
-          <a href="tprof.php" class="inline-btn">View Profile</a>
-        </div>
+                // Generate the teacher's profile picture path
+                $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg";
+                if (!file_exists($teacher_image_path)) {
+                    $teacher_image_path = "img/default-teacher.jpeg";
+                }
+                ?>
 
-        <div class="box">
-          <div class="tutor">
-            <img src="img/teachers/t3.jpeg" alt="" />
-            <div>
-              <h3>Rino</h3>
-              <span>Developer</span>
-            </div>
-          </div>
-          <p>Playlists: <span>4</span></p>
-          <p>Total Videos: <span>20</span></p>
-          <p>Total Likes: <span>1M</span></p>
-          <a href="tprof.php" class="inline-btn">View Profile</a>
-        </div>
+                <!-- Dynamic Teacher Box -->
+                <div class="box">
+                  <div class="tutor">
+                    <img src="<?php echo $teacher_image_path; ?>" alt="Teacher Image" />
+                    <div>
+                      <h3><?php echo $teacher_name; ?></h3>
+                      <span>Developer</span>
+                    </div>
+                  </div>
+                  <p>Playlists: <span><?php echo $playlists_count; ?></span></p>
+                  <p>Total Videos: <span><?php echo $video_count; ?></span></p>
+                  <p>Total Likes: <span><?php echo $likes_count; ?></span></p>
+                  <a href="tprof.php?teacher_id=<?php echo $teacher_id; ?>" class="inline-btn">View Profile</a>
+                </div>
+
+                <?php
+            }
+        } else {
+            echo "<p>No teachers found!</p>";
+        }
+        ?>
       </div>
     </section>
 

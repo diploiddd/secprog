@@ -106,10 +106,11 @@
       </div>
 
       <nav class="navbar">
+        <a href="yourcourses.php"><i class="fas fa-book"></i><span>Your Courses</span></a>
         <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
         <a href="course.php"><i class="fas fa-graduation-cap"></i><span>Discover Courses</span></a>
-        <a href="yourcourses.php"><i class="fas fa-chalkboard-user"></i><span>Your Courses</span></a>
+        <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Meet Our Teachers</span></a>
         <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
       </nav>
     </div>
