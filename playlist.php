@@ -2,6 +2,29 @@
   require("navigation.php");
   require_once("php/config.php");
 
+  $enroll_status = "";  // initializes enrollment status message
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['enroll_now'])) {
+      if (isset($_SESSION['user_id']) && isset($_POST['course_id'])) {
+          $user_id = $_SESSION['user_id'];
+          $course_id = $_POST['course_id'];
+          $enrollment_date = date("Y-m-d H:i:s");  // Current timestamp when enrolled
+
+          // insert into db
+          $enroll_query = "INSERT INTO enrollments (user_id, course_id, enrollment_date) VALUES ('$user_id', '$course_id', '$enrollment_date')";
+
+          if (mysqli_query($conn, $enroll_query)) {
+              // Enrollment success
+              $enroll_status = "You have successfully enrolled in the course!";
+          } else {
+              // Enrollment error
+              $enroll_status = "There was an error enrolling you. Please try again.";
+          }
+      } else {
+          $enroll_status = "You must be logged in to enroll.";
+      }
+  }
+
   if (isset($_GET['course_id'])) {
       $course_id = $_GET['course_id'];
 
@@ -19,13 +42,13 @@
           $teacher_id = $row['teacher_id'];
           $course_created_date = $row['course_created_date'];
 
-          // get course thumbnail
+          // course thumbnail
           $thumbnail_path = "img/thumbnails/tn" . $course_id . ".jpeg";
           if (!file_exists($thumbnail_path)) {
               $thumbnail_path = "img/default-thumbnail.jpeg";
           }
 
-          // get teacher's image
+          // teacher's image
           $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg";
           if (!file_exists($teacher_image_path)) {
               $teacher_image_path = "img/default-teacher.jpeg";
@@ -50,6 +73,13 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+
+    <!-- Show Enrollment Status -->
+    <?php if ($enroll_status): ?>
+        <script>
+            alert("<?php echo htmlspecialchars($enroll_status); ?>");
+        </script>
+    <?php endif; ?>
 
     <section class="playlist">
       <h1 class="heading">Playlist Details</h1>
@@ -81,7 +111,7 @@
             <div class="date">
               <i class="fas fa-calendar"></i><span><?php echo date("d-m-Y", strtotime($course_created_date)); ?></span>
             </div>
-            <form action="php/EnrollController.php" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="course_id" value="<?php echo $course_id; ?>" />
               <input type="submit" name="enroll_now" value="ENROLL NOW!" class="btn" />
             </form>
@@ -90,7 +120,7 @@
       </div>
     </section>
 
-    <!-- videos are set as default videos -->
+    <!-- Playlist Videos -->
     <section class="video-container">
       <h1 class="heading">Playlist Videos</h1>
       <div class="box-container">
@@ -109,7 +139,7 @@
         <a href="video.php" class="box">
           <i class="fas fa-play"></i>
           <img src="img/tn1.jpeg" alt="" />
-          <h3><?php echo htmlspecialchars($course_title) . " (part 02)"; ?></h3>
+          <h3><?php echo htmlspecialchars($course_title) . " (part 03)"; ?></h3>
         </a>
 
         <a href="video.php" class="box">
