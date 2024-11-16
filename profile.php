@@ -36,7 +36,11 @@
             <?php
               }
           ?>
-          <a href="update.php" class="inline-btn">Update Profile</a>
+          <div class="UpdateButton">
+            <a href="updateUsername.php" class="inline-btn">Change Username</a>
+            <a href="updatePassword.php" class="inline-btn">Change Password</a>
+            <a href="updateImage.php" class="inline-btn">Change Profile Picture</a>
+          </div>
         </div>
 
         <div class="box-container">

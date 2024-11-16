@@ -11,7 +11,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Update Profile</title>
+    <title>Update Password</title>
 
     <link
       rel="stylesheet"
@@ -23,14 +23,6 @@
     <section class="form-container">
       <form action="../php/UpdateController.php" method="post" enctype="multipart/form-data">
         <h3>Update Profile</h3>
-        <p>New Username</p>
-        <input
-          type="text"
-          name="username"
-          placeholder="Kocheng"
-          maxlength="100"
-          class="box"
-        />
         <p>Old password</p>
         <input
           type="password"
@@ -38,26 +30,29 @@
           placeholder="Enter your old password"
           maxlength="50"
           class="box"
+          required
         />
         <p>New password</p>
         <input
           type="password"
           name="newpass"
+          id="password"
           placeholder="Enter your new password"
           maxlength="50"
+          required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           class="box"
         />
         <p>Confirm password</p>
         <input
           type="password"
           name="confpass"
+          id="confirm_password"
           placeholder="Re-enter your new password"
           maxlength="50"
           class="box"
+          required
         />
-        <p>Update Profile Picture</p>
-        <input type="file" name="image" accept="img/*" class="box" />
-        <input type="submit" name="update" value="update profile" class="btn" />
+        <input type="submit" name="updatePassword" value="update profile" class="btn" />
       </form>
     </section>
 

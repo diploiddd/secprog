@@ -2,17 +2,8 @@
     session_start();
     require('../php/config.php');
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
-        // Collect and sanitize input data
-        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateImage'])) {
         $oldpassword = $_POST['oldpass'];
-        $newpassword = password_hash($_POST['newpass'], PASSWORD_BCRYPT);
-
-        // Validate username format
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-            echo "Invalid username!";
-            exit();
-        }
 
         // Check if old password is the same
         $id = $_SESSION['user_id'];
@@ -58,9 +49,46 @@
             exit();
         }
 
-        $query2 = "UPDATE users SET username = ?, password = ? WHERE user_id = ?";
+        header("Location: ../profile.php");
+    }
+    else if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateUsername'])){
+        // Collect and sanitize input data
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $oldpassword = $_POST['oldpass'];
+        
+        // Validate username format
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $username || !isset($username))) {
+            echo "Invalid username!";
+            exit();
+        }
+
+        // Check if old password is the same
+        $id = $_SESSION['user_id'];
+        if(!isset($_SESSION['user_id'])){
+            echo "You are not logged in!";
+            exit();
+        }
+        
+        $query1 = "SELECT * FROM users WHERE user_id = ?";
+        $stmt1 = $conn->prepare($query1);
+        $stmt1->bind_param("s", $id);
+        $stmt1->execute();
+        $result1 = $stmt1->get_result() or die("An error occured. Please try again later :(");
+        if($result1->num_rows == 1){
+            $row1 = $result1->fetch_assoc();
+            if(!password_verify($oldpassword, $row1['password'])){
+                echo "Wrong Password!";
+                exit();
+            }
+        }   
+        else {
+            echo "Something went wrong";
+            exit();
+        }
+
+        $query2 = "UPDATE users SET username = ? WHERE user_id = ?";
         $stmt2 = $conn->prepare($query2);
-        $stmt2->bind_param("ssi", $username, $newpassword, $id);
+        $stmt2->bind_param("si", $username, $id);
         if ($stmt2->execute()) {
             $query3 = "SELECT * FROM users WHERE user_id = ?";
             $stmt3 = $conn->prepare($query3);
@@ -71,12 +99,52 @@
             if($result3->num_rows == 1){
                 $row3 = $result3->fetch_assoc();
                 $_SESSION['username'] = $row3['username'];
-                $_SESSION['pp'] = $row3['pp'];
             }else echo "Something went wrong...";
 
             header("Location: ../profile.php");
         } else {
             echo "Error on update! Please try again later.";
+        }
+    }
+    else if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updatePassword'])){
+        // Collect and sanitize input data
+        $oldpassword = $_POST['oldpass'];
+        $newpassword = password_hash($_POST['newpass'], PASSWORD_BCRYPT);
+
+        // Check if old password is the same
+        $id = $_SESSION['user_id'];
+        if(!isset($_SESSION['user_id'])){
+            echo "You are not logged in!";
+            exit();
+        }
+        
+        $query1 = "SELECT * FROM users WHERE user_id = ?";
+        $stmt1 = $conn->prepare($query1);
+        $stmt1->bind_param("s", $id);
+        $stmt1->execute();
+        $result1 = $stmt1->get_result() or die("An error occured. Please try again later :(");
+        if($result1->num_rows == 1){
+            $row1 = $result1->fetch_assoc();
+            if(!password_verify($oldpassword, $row1['password'])){
+                echo "Wrong Password!";
+                exit();
+            }
+        }   
+        else {
+            echo "Something went wrong";
+            exit();
+        }
+
+        $query2 = "UPDATE users SET password = ? WHERE user_id = ?";
+        $stmt2 = $conn->prepare($query2);
+        $stmt2->bind_param("si", $newpassword, $id);
+
+        if ($stmt2->execute()) {
+            echo "Successfully changed password :D";
+            header("Location: ../profile.php");
+        } else {
+            echo "Error on update! Please try again later.";
+            exit();
         }
     }
 ?>
