@@ -21,7 +21,7 @@
         <div class="image">
           <img src="img/c.jpeg" alt="" />
         </div>
-        <form action="" method="post">
+        <form action="./php/ContactUs.php" method="post">
           <h3>Get in Touch With Us</h3>
           <input
             type="text"
@@ -55,7 +55,7 @@
             cols="30"
             rows="10"
           ></textarea>
-          <input type="submit" value="Send!" class="inline-btn" name="submit" />
+          <input type="submit" value="Send!" class="inline-btn" name="feedback" />
         </form>
       </div>
 
@@ -63,19 +63,19 @@
         <div class="box">
           <i class="fas fa-phone"></i>
           <h3>Phone Number</h3>
-          <a href="tel:1234567890">1234567890</a>
+          <p>021777888999</p>
         </div>
 
         <div class="box">
           <i class="fas fa-envelope"></i>
           <h3>Email</h3>
-          <a href="mailto:abc@gmail.com">abc@gmail.com</a>
+          <p>pengabdi@gmail.com</p>
         </div>
 
         <div class="box">
           <i class="fas fa-map-marker-alt"></i>
           <h3>Address</h3>
-          <a href="#">Jl. Pinggir Jalan no. 1, Konoha</a>
+          <p>Planet Lain</p>
         </div>
       </div>
     </section>

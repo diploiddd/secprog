@@ -20,9 +20,22 @@
       <h1 class="heading">Profile Details</h1>
       <div class="detail">
         <div class="user">
-          <img src="img/bonita.jpg" alt="" />
-          <h3>Bonita</h3>
-          <p>Student</p>
+            <?php
+              if(isset($_SESSION['username'])){
+                  ?>
+                  <img src="<?php echo $_SESSION['pp']; ?>" alt=""/>
+                  <h3><?php echo htmlspecialchars($_SESSION['username']); ?></h3>
+                  <p><?php echo htmlspecialchars($_SESSION['role']); ?></p>
+                  <?php
+              }
+              else{
+                  ?>
+                  <img src="img/profile.jpeg" alt=""/>
+                  <h3>User</h3>
+                  <p>Role</p>
+            <?php
+              }
+          ?>
           <a href="update.php" class="inline-btn">Update Profile</a>
         </div>
 

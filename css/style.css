@@ -1208,7 +1208,7 @@ section {
   color: var(--black);
 }
 
-.contact .box-container .box a {
+.contact .box-container .box p {
   display: block;
   font-size: 1.7rem;
   color: var(--light-color);
