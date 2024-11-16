@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2024 at 04:10 AM
+-- Generation Time: Nov 16, 2024 at 04:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -118,19 +118,21 @@ CREATE TABLE `users` (
   `username` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `role` enum('Regular','Premium') DEFAULT 'Regular'
+  `role` enum('Regular','Premium') DEFAULT 'Regular',
+  `pp` varchar(200) DEFAULT 'profile.jpeg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`) VALUES
-(1, 'admin', 'admin@email.com', '@nl1n3c0uRs3', 'Regular'),
-(2, 'user1', 'user1@email.com', 'User1User1', 'Regular'),
-(3, 'user1', 'user1@email.com', 'User2User2', 'Regular'),
-(4, 'dummy1', 'dummy1@gmail.com', '$2y$10$EaQrx53h6S9yz19UI6TvCeyDqniOztKV242grIsNiKqDdE/4uY1N2', 'Regular'),
-(5, 'dummy2', 'dummy2@gmail.com', '$2y$10$DrI6UNPCUA9b0T1zDG701eSQ.Xwh03inyVUigw8mA7Sq8Pf7v6FgS', 'Regular');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`, `pp`) VALUES
+(1, 'admin', 'admin@email.com', '$2y$10$Y04QOx2mv3ARTUQ45dMqq.QfgVwsm8YO6t625L1ogSUGsGOVpYdCa', 'Premium', 'img/tyler.jpeg'),
+(2, 'user1', 'user1@email.com', '$2y$10$xgjgoaCqTbokreSZ4F5Bpep5bcxvl/V5x/OoXsG0GvKnNe0cZXYS2', 'Regular', 'img/bonita.jpg'),
+(3, 'user2', 'user2@email.com', '$2y$10$YkgYRd5edOt4IGsSnZTrZ.kbm6Kmk1d/SATg34jcy2b4FnWGC4hfq', 'Regular', 'img/profile.jpeg'),
+(4, 'user3', 'user3@email.com', '$2y$10$4UcKSUxNKBvxtKqqhxjCCOgQRkzIxp/h/ofCP8oBOkftF3hwuRT7u', 'Regular', '../var/www/uploads/profile_67377b63adac10.16445558.png'),
+(5, 'user4', 'user4@email.com', '$2y$10$QnXiUSJUB7VSjmKdCk0swOnGWFx8j2a0u0/QS1FR2Zpev1rmTCqVS', 'Regular', '../var/www/uploads/profile_67377f0bd87e03.67256037.png'),
+(6, 'Dummy', 'dummy@gmail.com', '$2y$10$y9SJHbm6OXpjrM.z/weG7ukxgydHQAwI.5pBpCPRe2pcoRe7lLZtO', 'Regular', NULL);
 
 --
 -- Indexes for dumped tables
@@ -202,7 +204,7 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
