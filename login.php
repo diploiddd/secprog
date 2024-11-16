@@ -39,7 +39,7 @@
         />
 
         <input type="submit" name="login" value="Login" class="btn" />
-        <p>Haven't registered yet? click <a href="regis.php">here</a></p>
+        <p>Haven't registered yet? Click <a href="regis.php">here</a></p>
       </form>
     </section>
 

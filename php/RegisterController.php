@@ -1,11 +1,6 @@
 <?php
-<<<<<<< HEAD
-require('config.php');
-// require('FileUpload.php');  // Import file upload handling logic
-=======
-require('../php/config.php');
-require('FileUpload.php');  // Import file upload handling logic
->>>>>>> 49288c5db3e6d4969297e87595fd3447a4efc643
+    require('../php/config.php');
+    require('FileUpload.php');  // Import file upload handling logic
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
 
