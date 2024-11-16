@@ -1,5 +1,9 @@
 <?php
   require_once("navigation.php");
+  // if(!isset($_SESSION['user_id'])){
+  //   echo "You are not logged in!";
+  //   header("Location: ./profile.php");
+  // }
 ?>
 
 <!DOCTYPE html>
@@ -17,21 +21,13 @@
   </head>
   <body>
     <section class="form-container">
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="../php/UpdateController.php" method="post" enctype="multipart/form-data">
         <h3>Update Profile</h3>
-        <p>Your name</p>
+        <p>New Username</p>
         <input
           type="text"
-          name="name"
+          name="username"
           placeholder="Kocheng"
-          maxlength="100"
-          class="box"
-        />
-        <p>Your email</p>
-        <input
-          type="email"
-          name="email"
-          placeholder="kochenggarong@gmail.com"
           maxlength="100"
           class="box"
         />
@@ -61,7 +57,7 @@
         />
         <p>Update Profile Picture</p>
         <input type="file" name="image" accept="img/*" class="box" />
-        <input type="submit" name="submit" value="update profile" class="btn" />
+        <input type="submit" name="update" value="update profile" class="btn" />
       </form>
     </section>
 
