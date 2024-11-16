@@ -87,11 +87,8 @@
       <h1 class="heading">Our Courses</h1>
       <div class="box-container">
         <?php
-          // Check if query was successful
           if ($result && $result->num_rows > 0) {
-              // Loop through each course and render it
               while ($row = $result->fetch_assoc()) {
-                  // Fetch course and teacher details
                   $course_id = $row['course_id'];
                   $course_title = $row['course_title'];
                   $course_description = $row['course_description'];
@@ -110,11 +107,11 @@
                   }
 
                   // Teacher image path logic (based on the teacher_id linked to the course)
-                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; // Link teacher's image by teacher_id
+                  $teacher_image_path = "img/teachers/t" . $teacher_id . ".jpeg"; 
 
                   // Check if the teacher image file exists
                   if (!file_exists($teacher_image_path)) {
-                      $teacher_image_path = "img/default-teacher.jpeg"; // Default teacher image
+                      $teacher_image_path = "img/default-teacher.jpeg"; 
                   }
 
                   ?>
@@ -123,8 +120,8 @@
                     <div class="tutor">
                       <img src="<?php echo $teacher_image_path; ?>" alt="<?php echo $teacher_name; ?>" />
                       <div>
-                        <h3><?php echo htmlspecialchars($teacher_name); ?></h3> <!-- Display teacher name -->
-                        <span><?php echo $date; ?></span> <!-- Static date for now, you can add more dynamic data -->
+                        <h3><?php echo htmlspecialchars($teacher_name); ?></h3> 
+                        <span><?php echo $date; ?></span>
                       </div>
                     </div>
                     <img src="<?php echo $thumbnail_path; ?>" class="thumb" alt="Course Thumbnail" />
@@ -141,7 +138,6 @@
               echo "<p>No courses found!</p>";
           }
 
-          // Close the connection
           $conn->close();
         ?>
       </div>

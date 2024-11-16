@@ -1,13 +1,12 @@
 <?php
-    require_once("navigation.php");
-    require_once("php/config.php");
+  require_once("navigation.php");
+  require_once("php/config.php");
 
-    // Query to fetch course and teacher details
-    $query = "SELECT c.course_id, c.course_title, c.course_description, c.is_premium, c.course_created_date, 
-                     t.teacher_id, t.teachers_name
-              FROM courses c
-              LEFT JOIN teachers t ON c.teacher_id = t.teacher_id";
-    $result = mysqli_query($conn, $query);
+  $query = "SELECT c.course_id, c.course_title, c.course_description, c.is_premium, c.course_created_date, 
+                    t.teacher_id, t.teachers_name
+            FROM courses c
+            LEFT JOIN teachers t ON c.teacher_id = t.teacher_id";
+  $result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +27,8 @@
       <h1 class="heading">Our Courses</h1>
       <div class="box-container">
         <?php
-          // Check if query was successful
           if ($result && $result->num_rows > 0) {
-              // Loop through each course and render it
               while ($row = $result->fetch_assoc()) {
-                  // Fetch course and teacher details
                   $course_id = $row['course_id'];
                   $course_title = $row['course_title'];
                   $course_description = $row['course_description'];
@@ -64,8 +60,8 @@
                     <div class="tutor">
                       <img src="<?php echo $teacher_image_path; ?>" alt="<?php echo $teacher_name; ?>" />
                       <div>
-                        <h3><?php echo htmlspecialchars($teacher_name); ?></h3> <!-- Display teacher name -->
-                        <span><?php echo $date; ?></span> <!-- Static date for now, you can add more dynamic data -->
+                        <h3><?php echo htmlspecialchars($teacher_name); ?></h3> 
+                        <span><?php echo $date; ?></span> 
                       </div>
                     </div>
                     <img src="<?php echo $thumbnail_path; ?>" class="thumb" alt="Course Thumbnail" />
@@ -74,6 +70,7 @@
                         <p><?php echo htmlspecialchars($course_description); ?></p>
                     </div>
                     <a href="playlist.php?course_id=<?php echo $course_id; ?>" class="inline-btn">View Course</a>
+                    
                   </div>
 
                   <?php
@@ -82,7 +79,6 @@
               echo "<p>No courses found!</p>";
           }
 
-          // Close the connection
           $conn->close();
         ?>
       </div>
