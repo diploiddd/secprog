@@ -9,24 +9,32 @@
       if (isset($_SESSION['user_id']) && isset($_POST['course_id'])) {
           $user_id = $_SESSION['user_id'];
           $course_id = $_POST['course_id'];
-          $enrollment_date = date("Y-m-d H:i:s");  // date enrolled
+        //   $enrollment_date = date("Y-m-d H:i:s");  // date enrolled
 
-          $check_query = "SELECT * FROM enrollments WHERE user_id = '$user_id' AND course_id = '$course_id'";
-          $check_result = mysqli_query($conn, $check_query);
+          $check_query = "SELECT * FROM enrollments WHERE user_id = ? AND course_id = ?";
+          $stmt = $conn->prepare($check_query);
+          $stmt->bind_param("ii", $user_id, $course_id);
+          $stmt->execute();
+          $check_result = $stmt->get_result();
 
           if (mysqli_num_rows($check_result) > 0) {
               $enroll_status = "You are already enrolled in this course!";
           } else {
-              $enroll_query = "INSERT INTO enrollments (user_id, course_id, enrollment_date) VALUES ('$user_id', '$course_id', '$enrollment_date')";
+              $enroll_query = "INSERT INTO enrollments (user_id, course_id) VALUES (?, ?)";
+              $stmt = $conn->prepare($enroll_query);
+              $stmt->bind_param("ii", $user_id, $course_id);
+              
 
-              if (mysqli_query($conn, $enroll_query)) {
+              if ($stmt->execute()) {
                   // success
                   $enroll_status = "You have successfully enrolled in the course!";
               } else {
                   // error :(
                   $enroll_status = "There was an error enrolling you. Please try again.";
               }
+            
           }
+          $stmt->close();
       } else {
           $enroll_status = "You must be logged in to enroll.";
       }
@@ -39,26 +47,32 @@
           $course_id = $_POST['course_id'];
 
           // Delete from db
-          $unenroll_query = "DELETE FROM enrollments WHERE user_id = '$user_id' AND course_id = '$course_id'";
+          $unenroll_query = "DELETE FROM enrollments WHERE user_id = ? AND course_id = ?";
+          $stmt = $conn->prepare($unenroll_query);
+          $stmt->bind_param("si", $user_id, $course_id);
 
-          if (mysqli_query($conn, $unenroll_query)) {
+          if ($stmt->execute()) {
               $enroll_status = "You have successfully unenrolled from the course!";
           } else {
               $enroll_status = "There was an error unenrolling you. Please try again.";
           }
+          $stmt->close();
       }
   }
 
   // Check if user is already enrolled
   $is_enrolled = false;
   if (isset($_SESSION['user_id']) && isset($_GET['course_id'])) {
-      $user_id = $_SESSION['user_id'];
-      $course_id = $_GET['course_id'];
+    $user_id = $_SESSION['user_id'];
+    $course_id = $_GET['course_id'];
 
-      $check_query = "SELECT * FROM enrollments WHERE user_id = '$user_id' AND course_id = '$course_id'";
-      $check_result = mysqli_query($conn, $check_query);
+    $check_query = "SELECT * FROM enrollments WHERE user_id = ? AND course_id = ?";
+    $stmt = $conn->prepare($check_query);
+    $stmt->bind_param("ii", $user_id, $course_id);
+    $stmt->execute();
+    $check_result = $stmt->get_result();
 
-      $is_enrolled = (mysqli_num_rows($check_result) > 0);
+    $is_enrolled = ($check_result->num_rows > 0);
   }
 
   // Fetch course details

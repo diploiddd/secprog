@@ -14,9 +14,12 @@
             FROM enrollments e
             JOIN courses c ON e.course_id = c.course_id
             LEFT JOIN teachers t ON c.teacher_id = t.teacher_id
-            WHERE e.user_id = '$user_id'"; 
+            WHERE e.user_id = ?"; 
 
-  $result = mysqli_query($conn, $query);
+  $stmt = $conn->prepare($query);
+  $stmt->bind_param("i", $user_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
