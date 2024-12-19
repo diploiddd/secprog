@@ -43,7 +43,7 @@
             type="number"
             placeholder="Enter your number"
             required
-            maxlength="100"
+            maxlength="15"
             name="number"
             class="box"
           />
@@ -54,7 +54,10 @@
             required
             cols="30"
             rows="10"
+            maxlength="300"
           ></textarea>
+          <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+          <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? '' ?>">
           <input type="submit" value="Send!" class="inline-btn" name="feedback" />
         </form>
       </div>

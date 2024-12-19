@@ -11,5 +11,10 @@
     if ($conn->connect_error) {
         die("Database connection failed: " . $conn->connect_error);
     }
+
+    //Generate CSRF token
+    if (empty($_SESSION['csrf_token'])){
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
 ?>
 

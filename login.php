@@ -24,6 +24,7 @@
   <body>
     <section class="form-container">
       <form action="./php/AuthController.php" method="POST">
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
         <h3>Welcome!</h3>
         <p>Your email <span>*</span></p>
         <input

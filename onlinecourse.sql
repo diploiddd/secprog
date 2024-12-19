@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+CREATE TABLE feedback (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,       
+    user_id INT NOT NULL,                        
+    names VARCHAR(100) NOT NULL,                      
+    email VARCHAR(100) NOT NULL,                     
+    phone_number VARCHAR(15) NOT NULL,               
+    messages VARCHAR(300) NOT NULL,                           
+    submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP 
+);
+
+--
+-- Dumping Data for table feedback
+--
+
+INSERT INTO feedback (user_id, names, email, phone_number, messages)
+VALUES (1, 'Lemonade', 'lemonade@example.com', '112233445566', 'HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA');
+
+--
 -- Table structure for table `categories`
 --
 
@@ -209,6 +229,13 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `courses`
+--
+ALTER TABLE `feedback`
+  ADD CONSTRAINT FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
 
 --
 -- Constraints for table `courses`

@@ -47,7 +47,7 @@
           name="password"
           id="password"
           placeholder="Enter your password"
-          maxlength="50"
+          maxlength="100"
           required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           class="box"
         />
@@ -57,12 +57,13 @@
           name="confpass"
           id="confirm_password"
           placeholder="Re-enter your password"
-          maxlength="50"
+          maxlength="100"
           required
           class="box"
         />
         <p>Upload Profile Picture <span>*</span></p>
         <input type="file" name="image" accept="img/*" required class="box" />
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>" />
         <input type="submit" name="register" value="register" class="btn" />
         <p>Already have an account? Login <a href="login.php">here</a></p>
       </form>

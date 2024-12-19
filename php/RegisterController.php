@@ -6,12 +6,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
 
     // Collect and sanitize input data
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+
+    //CSRF token validation
+    if(!$csrf_token === $_SESSION['csrf_token'] || !$csrf_token){
+        echo ("Oh noo, something went wrong");
+        header("Refresh: 2; url=../home.php");
+        exit();
+    }
 
     // Validate username format
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         echo "Invalid username!";
+        header("Refresh: 2; url=../regis.php");
         exit();
     }
 
@@ -24,11 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
 
     if ($result->num_rows != 0) {
         echo "This email has already been registered. Please try another one!";
+        header("Refresh: 2; url=../regis.php");
+        exit();
     } else {
         // Handle the file upload using FileUpload.php
         $profileImage = handleFileUpload('image');
         if ($profileImage === false) {
             echo "File upload failed.";
+            header("Refresh: 2; url=../regis.php");
             exit();
         }
 
@@ -37,10 +49,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
         $stmt1 = $conn->prepare($query2);
         $stmt1->bind_param("ssss", $username, $email, $password, $profileImage);
         if ($stmt1->execute()) {
-            header("Location: ../login.php");  // Redirect to login on success
+           // Regenerate Token
+           $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            
+           //Redirect user
+           echo "Login Sucess! Redirecting...";
+           header("Refresh: 2; url=../login.php");  // Redirect to login on success
         } else {
             echo "Registration error! Please try again later.";
+            header("Refresh: 2; url=../home.php");
+            exit();
         }
+        $stmt->close();
+        $stmt1->close();
     }
 }
 else
