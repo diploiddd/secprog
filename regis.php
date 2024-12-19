@@ -1,5 +1,9 @@
 <?php
   require_once("navigation.php");
+  if(isset($_SESSION['user_id'])){
+    //User already logged in, redirect to home
+    header("Location:./home.php");
+  }
 ?>
 
 <!DOCTYPE html>

@@ -1,7 +1,11 @@
 <?php
 // Mulai session
 session_start();
-// require_once('navigation.php');
+
+if(!isset($_SESSION['user_id'])){
+    //User not logged in, redirect to login
+    header("Location:./login.php");
+  }
 
 
 if(isset($_SESSION['username'])) {

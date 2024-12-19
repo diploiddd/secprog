@@ -22,7 +22,6 @@
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username'] = $row['username'];
-                    $_SESSION['password'] = $row['password'];
                     $_SESSION['role'] = $row['role'];
                     $_SESSION['pp'] = $row['pp'];
                     sleep(1);
