@@ -2,14 +2,26 @@
     require("navigation.php");
     require_once("php/config.php");
 
+    
     $enroll_status = "";  // initializes enrollment status message
 
     // Handle Enrollment
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['enroll_now'])) {
+        
+
         if (isset($_SESSION['user_id']) && isset($_POST['course_id'])) {
             $user_id = $_SESSION['user_id'];
             $course_id = $_POST['course_id'];
             //   $enrollment_date = date("Y-m-d H:i:s");  // date enrolled
+
+            $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+
+            // CSRF TOKEN VALIDATION
+            if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token'])){
+                echo ("Oh noo, something went wrong");
+                header("Refresh: 1.5; url=../course.php");
+                exit();
+            }
 
             $check_query = "SELECT * FROM enrollments WHERE user_id = ? AND course_id = ?";
             $stmt = $conn->prepare($check_query);
@@ -45,6 +57,15 @@
         if (isset($_SESSION['user_id']) && isset($_POST['course_id'])) {
             $user_id = $_SESSION['user_id'];
             $course_id = $_POST['course_id'];
+
+            $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+
+            // CSRF TOKEN VALIDATION
+            if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token'])){
+                echo ("Oh noo, something went wrong");
+                header("Refresh: 1.5; url=../course.php");
+                exit();
+            }
 
             // Delete from db
             $unenroll_query = "DELETE FROM enrollments WHERE user_id = ? AND course_id = ?";
@@ -190,12 +211,14 @@
                             <!-- enrolled -->
                             <form action="" method="POST" enctype="multipart/form-data" onsubmit="return confirmUnenroll()">
                                 <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($course_id); ?>" />
+                                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
                                 <input type="submit" name="unenroll" value="Unenroll Now" class="btn" />
                             </form>
                         <?php else: ?>
                             <!-- not enrolled -->
                             <form action="" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($course_id); ?>" />
+                                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
                                 <input type="submit" name="enroll_now" value="Enroll Now" class="btn" />
                             </form>
                         <?php endif; ?>
@@ -208,7 +231,26 @@
                         <?php
                     }
                   }
-                  ?>
+                  else{
+                ?>
+                    <?php if ($is_enrolled): ?>
+                            <!-- enrolled -->
+                            <form action="" method="POST" enctype="multipart/form-data" onsubmit="return confirmUnenroll()">
+                                <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($course_id); ?>" />
+                                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+                                <input type="submit" name="unenroll" value="Unenroll Now" class="btn" />
+                            </form>
+                        <?php else: ?>
+                            <!-- not enrolled -->
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($course_id); ?>" />
+                                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+                                <input type="submit" name="enroll_now" value="Enroll Now" class="btn" />
+                            </form>
+                    <?php endif; ?>
+                <?php  
+                    }
+                ?>
                   
               </div>
           </div>

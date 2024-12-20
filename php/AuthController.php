@@ -35,13 +35,13 @@
                 } 
                 else {
                     echo "Incorrect Email or Password!";
-                    header("Refresh: 2; url=../login.php");
+                    header("Refresh: 1.5; url=../login.php");
                     exit();
                 }
             }
             else {
                 echo "Incorrect Email or Password!";
-                header("Refresh: 2; url=../login.php");
+                header("Refresh: 1.5; url=../login.php");
                 exit();
             }
             
