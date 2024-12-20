@@ -111,7 +111,10 @@ CREATE TABLE `enrollments` (
 CREATE TABLE `teachers` (
   `teacher_id` int(11) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `teachers_name` varchar(50) NOT NULL
+  `teachers_name` varchar(50) NOT NULL,
+  `playlist_count` int(11) DEFAULT '0',
+  `video_count` int(11) DEFAULT '0',
+  `likes_count` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

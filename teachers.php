@@ -3,7 +3,7 @@ require_once("navigation.php");
 require_once("php/config.php"); // Assuming this connects to your database
 
 // Fetch teacher data
-$query = "SELECT teacher_id, teachers_name, playlists_count, video_count, likes_count FROM teachers";
+$query = "SELECT teacher_id, teachers_name, playlist_count, video_count, likes_count FROM teachers";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -48,7 +48,7 @@ $result = mysqli_query($conn, $query);
                 // Fetch teacher data
                 $teacher_id = $row['teacher_id'];
                 $teacher_name = htmlspecialchars($row['teachers_name']);
-                $playlists_count = $row['playlists_count'];
+                $playlists_count = $row['playlist_count'];
                 $video_count = $row['video_count'];
                 $likes_count = $row['likes_count'];
 
