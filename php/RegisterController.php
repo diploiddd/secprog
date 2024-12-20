@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
     $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
 
     //CSRF token validation
-    if(!$csrf_token === $_SESSION['csrf_token'] || !$csrf_token){
+    if(!($csrf_token === $_SESSION['csrf_token']) || !$csrf_token){
         echo ("Oh noo, something went wrong");
         header("Refresh: 2; url=../home.php");
         exit();

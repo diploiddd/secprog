@@ -121,6 +121,13 @@ section {
   color: var(--white);
 }
 
+.premiumcourse{
+  font-size: 20px;
+  right: 1px;
+  color: var(--main-color);
+  position: static;
+} 
+
 .enroll{
   /* background-color: var(--white); */
   width: 100%;

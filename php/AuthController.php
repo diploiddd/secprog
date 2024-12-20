@@ -12,7 +12,7 @@
             $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
 
             //CSRF TOKEN VALIDATION
-            if(!$csrf_token || !$csrf_token === $_SESSION['csrf_token']){
+            if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token'])){
                 echo ("Oh noo, something went wrong");
                 header("Refresh: 2; url=../login.php");
                 exit();

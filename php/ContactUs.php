@@ -12,7 +12,7 @@
             $user_id = filter_input(INPUT_POST, 'user_id', FILTER_SANITIZE_NUMBER_INT);
 
             //CSRF TOKEN VALIDATION
-            if(!$csrf_token || !$csrf_token === $_SESSION['csrf_token'] || !$user_id){
+            if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token']) || !$user_id){
                 echo ("Oh noo, something went wrong");
                 header("Refresh: 2; url=../contact.php");
                 exit();
