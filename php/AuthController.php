@@ -14,7 +14,7 @@
             //CSRF TOKEN VALIDATION
             if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token'])){
                 echo ("Oh noo, something went wrong");
-                header("Refresh: 2; url=../login.php");
+                header("Refresh: 1.5; url=../login.php");
                 exit();
             }
             //Prepared Statement
@@ -52,7 +52,7 @@
             
             //Redirect user
             echo "Login Sucess! Redirecting...";
-            header("Refresh: 2; url=../home.php");
+            header("Refresh: 1.5; url=../home.php");
         }
         
         else if (isset($_POST['logout'])){

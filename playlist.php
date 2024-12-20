@@ -46,6 +46,9 @@
                 }
                 
             }
+            //Regen token
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
             $stmt->close();
         } else {
             $enroll_status = "You must be logged in to enroll.";
@@ -77,6 +80,9 @@
             } else {
                 $enroll_status = "There was an error unenrolling you. Please try again.";
             }
+            //Regen token
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            
             $stmt->close();
         }
     }

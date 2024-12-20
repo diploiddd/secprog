@@ -13,14 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
     //CSRF token validation
     if(!($csrf_token === $_SESSION['csrf_token']) || !$csrf_token){
         echo ("Oh noo, something went wrong");
-        header("Refresh: 2; url=../home.php");
+        header("Refresh: 1.5; url=../home.php");
         exit();
     }
 
     // Validate username format
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         echo "Invalid username!";
-        header("Refresh: 2; url=../regis.php");
+        header("Refresh: 1.5; url=../regis.php");
         exit();
     }
 
@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
 
     if ($result->num_rows != 0) {
         echo "This email has already been registered. Please try another one!";
-        header("Refresh: 2; url=../regis.php");
+        header("Refresh: 1.5; url=../regis.php");
         exit();
     } else {
         // Handle the file upload using FileUpload.php
         $profileImage = handleFileUpload('image');
         if ($profileImage === false) {
             echo "File upload failed.";
-            header("Refresh: 2; url=../regis.php");
+            header("Refresh: 1.5; url=../regis.php");
             exit();
         }
 
@@ -54,10 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['register'])) {
             
            //Redirect user
            echo "Login Sucess! Redirecting...";
-           header("Refresh: 2; url=../login.php");  // Redirect to login on success
+           header("Refresh: 1.5; url=../login.php");  // Redirect to login on success
         } else {
             echo "Registration error! Please try again later.";
-            header("Refresh: 2; url=../home.php");
+            header("Refresh: 1.5; url=../home.php");
             exit();
         }
         $stmt->close();

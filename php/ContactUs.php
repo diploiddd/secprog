@@ -14,18 +14,18 @@
             //CSRF TOKEN VALIDATION
             if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token']) || !$user_id){
                 echo ("Oh noo, something went wrong");
-                header("Refresh: 2; url=../contact.php");
+                header("Refresh: 1.5; url=../contact.php");
                 exit();
             }
 
             if (!preg_match('/^[a-zA-Z ]*$/', $name)) { // Example validation
                 echo "Name can only contain alphabets and space.!";
-                header("Refresh: 2; url=../contact.php");
+                header("Refresh: 1.5; url=../contact.php");
                 exit();
             }
             if (!preg_match('/^[0-9]*$/', $phoneNum)) { // Example validation
                 echo "Phone Number should only contain numeric!";
-                header("Refresh: 2; url=../contact.php");
+                header("Refresh: 1.5; url=../contact.php");
                 exit();
             }
 
@@ -36,7 +36,7 @@
 
             if(!$stmt_feedback->execute()){
                 echo "An error occured :(, please try again later";
-                header("Refresh: 2; url=../contact.php");
+                header("Refresh: 1.5; url=../contact.php");
                 exit();
             }
 
@@ -47,7 +47,7 @@
 
             //Redirect User
             echo  "Your feedback has been successully recorded. Thank you for your input :)";
-            header("Refresh: 2; url=../contact.php");
+            header("Refresh: 1.5; url=../contact.php");
         }
     }
 ?>
