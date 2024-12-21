@@ -67,7 +67,7 @@
                         <div class="premiumcourse">
                         <?php
                         // Is Premium Lock Icon
-                        if($is_premium == 1){
+                        if($is_premium == 1 && (!isset($_SESSION['role']) || $_SESSION['role'] !== "Premium")){
                           ?>
                           <i class="fa-solid fa-lock"></i>
                           <?php

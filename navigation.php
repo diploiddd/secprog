@@ -114,7 +114,14 @@
         <a href="course.php"><i class="fas fa-graduation-cap"></i><span>Discover Courses</span></a>
         <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Meet Our Teachers</span></a>
         <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
-      </nav>
+        <?php
+          if(!($_SESSION['role'] === "Premium")){
+            ?>
+            <a class="up-to-premium" href="premium.php"><i class="fa-solid fa-star"></i><span>Upgrade to Premium</span></a>
+            <?php
+          }
+        ?>
+        </nav>
     </div>
   </body>
 </html>
