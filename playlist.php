@@ -128,14 +128,14 @@
         $role = $_SESSION['role'];
         
 
-        // Validate Role to visit course page -- check again after confirming system's flow
-        // if($is_premium === 1){
-        //     if(!($role === "Premium")){
-        //         echo "You need to be premium to see this course!";
-        //         header("Refresh:1.5; url=../course.php");
-        //         exit();
-        //     }
-        // }
+        // Validate Role to visit course page
+        if($is_premium === 1){
+            if(!($role === "Premium")){
+                echo "You need to be premium to see this course!";
+                header("Refresh:1.5; url=../course.php");
+                exit();
+            }
+        }
 
         // course thumbnail
         $thumbnail_path = "img/thumbnails/tn" . htmlspecialchars($course_id) . ".jpeg";
@@ -210,7 +210,7 @@
                 
 
                   <?php
-                  if($is_premium === 1){
+                  if($is_premium === 1){ //biarin aja dlu kali ya (ceritanya dev parno)
                     if($role === "Premium"){
                         ?>
                         <?php if ($is_enrolled): ?>
