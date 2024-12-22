@@ -1,23 +1,23 @@
 <?php
-    session_start();
     require('../php/config.php');
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateImage'])) {
         $oldpassword = $_POST['oldpass'];
 
         // Check if the user is logged in
-        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         if(!isset($_SESSION['user_id'])){
             echo "You are not logged in!";
+            header("Refresh: 1; url=../home.php");
             exit();
         }
-
+        
+        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
 
         //CSRF TOKEN VALIDATION
-        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$id) {
             echo "Invalid CSRF token or user ID.";
-            header("Refresh: 1; url=../updateImage.php");
+            header("Refresh: 1; url=../updateUsername.php");
             exit();
         }
         
@@ -77,16 +77,17 @@
         }
 
         // Check if user is logged in
-        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         if(!isset($_SESSION['user_id'])){
             echo "You are not logged in!";
+            header("Refresh: 1; url=../home.php");
             exit();
         }
-
+        
+        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
 
         //CSRF TOKEN VALIDATION
-        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$id) {
             echo "Invalid CSRF token or user ID.";
             header("Refresh: 1; url=../updateUsername.php");
             exit();
@@ -140,18 +141,19 @@
         $newpassword = password_hash($_POST['newpass'], PASSWORD_BCRYPT);
 
         // Check if user is logged in
-        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         if(!isset($_SESSION['user_id'])){
             echo "You are not logged in!";
+            header("Refresh: 1; url=../home.php");
             exit();
         }
-
+        
+        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
 
         //CSRF TOKEN VALIDATION
-        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$id) {
             echo "Invalid CSRF token or user ID.";
-            header("Refresh: 1; url=../updatePassword.php");
+            header("Refresh: 1; url=../updateUsername.php");
             exit();
         }
         

@@ -2,6 +2,11 @@
   require_once("navigation.php");
   require_once("php/config.php"); 
 
+  if(!isset($_SESSION['user_id'])){
+    header("Location:../login.php");
+    exit();
+  }
+
   $teacher = [];
   $courses = [];
 
