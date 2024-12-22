@@ -1,5 +1,24 @@
 <?php
+    ini_set('session.cookie_secure', 1); 
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.use_strict_mode', 1);
+    ini_set('session.cookie_samesite', 'Strict');
+
+    if(session_status() === PHP_SESSION_NONE){
+        session_start();
+    }
+
+    session_regenerate_id(true);
+
+    //SESSION TIMEOUT after 12 hours inactive
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > (3600 * 12))) {
+        session_unset(); 
+        session_destroy();  
+    }
+    $_SESSION['LAST_ACTIVITY'] = time();
+
     require('database.php');
+
     $conn = new mysqli(
         $config['server'],
         $config['username'],
@@ -61,5 +80,7 @@
         </script>";
         unset($_SESSION['premium_expired']);
     }
+
+    
 ?>
 

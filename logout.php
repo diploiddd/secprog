@@ -13,6 +13,7 @@ if(isset($_SESSION['username'])) {
     <html>
         <form action="./php/AuthController.php" method="POST">
             <p>Confirm Logout?</p>
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?? '' ?>">
             <input type="submit" name="logout" value="Yes" class="btn">
             <a href="index.php">
                 <input type="button" name="cancel" value="No" class="button">
@@ -23,7 +24,7 @@ if(isset($_SESSION['username'])) {
 
     <?php
 } else {
-    echo '<script type="text/javascript">window.location.href = "http://localhost/index.php";</script>';
-    exit;
+    header("Location: ./index.php");
+    exit();
 }
 ?>

@@ -14,7 +14,7 @@
             //CSRF TOKEN VALIDATION
             if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token'])){
                 echo ("Oh noo, something went wrong");
-                header("Refresh: 1.5; url=../login.php");
+                header("Refresh: 1; url=../login.php");
                 exit();
             }
             //Prepared Statement
@@ -34,14 +34,14 @@
                     $_SESSION['pp'] = $row['pp'];
                 } 
                 else {
-                    echo "Incorrect Email or Password!";
-                    header("Refresh: 1.5; url=../login.php");
+                    echo "Invalid Credentials!";
+                    header("Refresh: 1; url=../login.php");
                     exit();
                 }
             }
             else {
-                echo "Incorrect Email or Password!";
-                header("Refresh: 1.5; url=../login.php");
+                echo "Invalid Credentials!";
+                header("Refresh: 1; url=../login.php");
                 exit();
             }
             
@@ -52,7 +52,7 @@
             
             //Redirect user
             echo "Login Sucess! Redirecting...";
-            header("Refresh: 1.5; url=../home.php");
+            header("Refresh: 1; url=../home.php");
         }
         
         else if (isset($_POST['logout'])){

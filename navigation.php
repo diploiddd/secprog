@@ -1,7 +1,5 @@
 <?php
-  session_start();
-  session_regenerate_id(true);
-  require_once("./php/config.php");
+  require("./php/config.php");
 ?>
 
 <!DOCTYPE html>
