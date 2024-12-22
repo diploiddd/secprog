@@ -27,7 +27,7 @@
             $premium_start = date('Y-m-d H:i:s');
             $premiumquery = "UPDATE users SET role = 'Premium', premium_start = ? WHERE user_id = ?";
             $stmt = $conn->prepare($premiumquery);
-            $stmt->bind_param("is", $user_id, $premium_start);
+            $stmt->bind_param("si", $premium_start, $user_id);
 
             if($stmt->execute()){
                 echo "Sucess";

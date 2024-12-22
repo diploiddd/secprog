@@ -1,7 +1,6 @@
 <?php
-    session_start();
-    session_regenerate_id(true);
     require('./config.php');
+    session_regenerate_id(true);
 
     //Handle Login
     if($_SERVER['REQUEST_METHOD'] == "POST"){
