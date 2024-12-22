@@ -12,20 +12,36 @@
             $user_id = filter_input(INPUT_POST, 'user_id', FILTER_SANITIZE_NUMBER_INT);
 
             //CSRF TOKEN VALIDATION
-            if(!$csrf_token || !($csrf_token === $_SESSION['csrf_token']) || !$user_id){
-                echo ("Oh noo, something went wrong");
-                header("Refresh: 1.5; url=../contact.php");
+            if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+                echo "Invalid CSRF token or user ID.";
+                header("Refresh: 1; url=../contact.php");
+                exit();
+            }
+            
+            //Email Validation
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "Invalid email address!";
+                header("Refresh: 1; url=../contact.php");
+                exit();
+            }
+            
+            //Username Validation
+            if (!preg_match('/^[a-zA-Z ]*$/', $name)) {
+                echo "Name can only contain alphabets and space.!";
+                header("Refresh: 1; url=../contact.php");
                 exit();
             }
 
-            if (!preg_match('/^[a-zA-Z ]*$/', $name)) { // Example validation
-                echo "Name can only contain alphabets and space.!";
-                header("Refresh: 1.5; url=../contact.php");
+            //Phone Number Validation
+            if (!preg_match('/^[0-9]*$/', $phoneNum)) {
+                echo "Phone Number should only contain numeric!";
+                header("Refresh: 1; url=../contact.php");
                 exit();
             }
-            if (!preg_match('/^[0-9]*$/', $phoneNum)) { // Example validation
-                echo "Phone Number should only contain numeric!";
-                header("Refresh: 1.5; url=../contact.php");
+
+            if (strlen($message) > 300) {
+                echo "Message exceeds the maximum length of 300 characters!";
+                header("Refresh: 1; url=../contact.php");
                 exit();
             }
 
@@ -36,7 +52,7 @@
 
             if(!$stmt_feedback->execute()){
                 echo "An error occured :(, please try again later";
-                header("Refresh: 1.5; url=../contact.php");
+                header("Refresh: 1; url=../contact.php");
                 exit();
             }
 
@@ -47,7 +63,11 @@
 
             //Redirect User
             echo  "Your feedback has been successully recorded. Thank you for your input :)";
-            header("Refresh: 1.5; url=../contact.php");
+            header("Refresh: 1; url=../contact.php");
+            exit();
         }
+    }
+    else{
+        header("Location: ../home.php");
     }
 ?>

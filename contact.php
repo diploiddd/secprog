@@ -56,7 +56,7 @@
             rows="10"
             maxlength="300"
           ></textarea>
-          <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+          <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
           <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? '' ?>">
           <input type="submit" value="Send!" class="inline-btn" name="feedback" />
         </form>
