@@ -41,6 +41,7 @@
           class="box"
           required
         />
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '')?>">
         <input type="submit" name="updateUsername" value="update profile" class="btn" />
       </form>
     </section>

@@ -5,10 +5,19 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateImage'])) {
         $oldpassword = $_POST['oldpass'];
 
-        // Check if old password is the same
-        $id = $_SESSION['user_id'];
+        // Check if the user is logged in
+        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         if(!isset($_SESSION['user_id'])){
             echo "You are not logged in!";
+            exit();
+        }
+
+        $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+
+        //CSRF TOKEN VALIDATION
+        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+            echo "Invalid CSRF token or user ID.";
+            header("Refresh: 1; url=../updateImage.php");
             exit();
         }
         
@@ -49,6 +58,11 @@
             exit();
         }
 
+        // Regenerate Token
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
+        session_regenerate_id(true);
+
         header("Location: ../profile.php");
     }
     else if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateUsername'])){
@@ -62,10 +76,19 @@
             exit();
         }
 
-        // Check if old password is the same
-        $id = $_SESSION['user_id'];
+        // Check if user is logged in
+        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         if(!isset($_SESSION['user_id'])){
             echo "You are not logged in!";
+            exit();
+        }
+
+        $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+
+        //CSRF TOKEN VALIDATION
+        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+            echo "Invalid CSRF token or user ID.";
+            header("Refresh: 1; url=../updateUsername.php");
             exit();
         }
         
@@ -105,16 +128,30 @@
         } else {
             echo "Error on update! Please try again later.";
         }
+
+        // Regenerate Token
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
+        session_regenerate_id(true);
     }
     else if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updatePassword'])){
         // Collect and sanitize input data
         $oldpassword = $_POST['oldpass'];
         $newpassword = password_hash($_POST['newpass'], PASSWORD_BCRYPT);
 
-        // Check if old password is the same
-        $id = $_SESSION['user_id'];
+        // Check if user is logged in
+        $id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
         if(!isset($_SESSION['user_id'])){
             echo "You are not logged in!";
+            exit();
+        }
+
+        $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+
+        //CSRF TOKEN VALIDATION
+        if (!$csrf_token || $csrf_token !== $_SESSION['csrf_token'] || !$user_id) {
+            echo "Invalid CSRF token or user ID.";
+            header("Refresh: 1; url=../updatePassword.php");
             exit();
         }
         
@@ -146,5 +183,13 @@
             echo "Error on update! Please try again later.";
             exit();
         }
+        
+        // Regenerate Token
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
+        session_regenerate_id(true);
+    }
+    else{
+        header("Location: ../home.php");
     }
 ?>

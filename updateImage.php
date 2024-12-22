@@ -35,6 +35,7 @@
           maxlength="50"
           class="box"
         />
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '')?>">
         <input type="submit" name="updateImage" value="update profile" class="btn" required/>
       </form>
     </section>
