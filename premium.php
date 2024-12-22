@@ -24,9 +24,10 @@
             exit();
         }
         else if($_SESSION['role'] === "Regular"){
-            $premiumquery = "UPDATE users SET role = 'Premium' WHERE user_id = ?";
+            $premium_start = date('Y-m-d H:i:s');
+            $premiumquery = "UPDATE users SET role = 'Premium', premium_start = ? WHERE user_id = ?";
             $stmt = $conn->prepare($premiumquery);
-            $stmt->bind_param("i", $user_id);
+            $stmt->bind_param("is", $user_id, $premium_start);
 
             if($stmt->execute()){
                 echo "Sucess";
