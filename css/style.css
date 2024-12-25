@@ -547,7 +547,7 @@ section {
 .course-description {
   border-radius: 5px;
   font-size: 15px;
-  color: #333; /* Dark gray text */
+  color: var(--black); /* Dark gray text */
   line-height: 1.5;
 }
 
