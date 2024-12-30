@@ -14,7 +14,7 @@
       $teacher_id = intval($_GET['teacher_id']);
 
       // teacher
-      $teacher_query = "SELECT teachers_name, playlists_count, video_count, likes_count FROM teachers WHERE teacher_id = ?";
+      $teacher_query = "SELECT teachers_name, playlist_count, video_count, likes_count FROM teachers WHERE teacher_id = ?";
       $stmt = $conn->prepare($teacher_query);
       $stmt->bind_param('i', $teacher_id);
       $stmt->execute();
@@ -63,12 +63,12 @@
       <h1 class="heading">Profile Details</h1>
       <div class="detail">
         <div class="teacher">
-          <img src="img/teachers/t<?php echo $teacher_id; ?>.jpeg" alt="Teacher Image" />
+          <img src="img/teachers/t<?php echo htmlspecialchars($teacher_id); ?>.jpeg" alt="Teacher Image" />
           <h3><?php echo htmlspecialchars($teacher['teachers_name']); ?></h3>
           <span>Developer</span>
         </div>
         <div class="flex">
-          <p>Total Playlists: <span><?php echo htmlspecialchars($teacher['playlists_count']); ?></span></p>
+          <p>Total Playlists: <span><?php echo htmlspecialchars($teacher['playlist_count']); ?></span></p>
           <p>Total Videos: <span><?php echo htmlspecialchars($teacher['video_count']); ?></span></p>
           <p>Total Likes: <span><?php echo htmlspecialchars($teacher['likes_count']); ?></span></p>
         </div>
@@ -81,9 +81,9 @@
         <?php if (!empty($courses)): ?>
           <?php foreach ($courses as $course): ?>
             <div class="box">
-              <img src="img/thumbnails/tn<?php echo $course['course_id']; ?>.jpeg" class="thumb" alt="Course Thumbnail" />
+              <img src="img/thumbnails/tn<?php echo htmlspecialchars($course['course_id']); ?>.jpeg" class="thumb" alt="Course Thumbnail" />
               <h3 class="title"><?php echo htmlspecialchars($course['course_title']); ?></h3>
-              <a href="playlist.php?course_id=<?php echo $course['course_id']; ?>" class="inline-btn">View Playlists</a>
+              <a href="playlist.php?course_id=<?php echo htmlspecialchars($course['course_id']); ?>" class="inline-btn">View Playlists</a>
             </div>
           <?php endforeach; ?>
         <?php else: ?>
